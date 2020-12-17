@@ -3,6 +3,7 @@ package org.generation.imei.controller;
 import java.util.List;
 
 import org.generation.imei.model.Postagem;
+import org.generation.imei.model.Tema;
 import org.generation.imei.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,5 +50,11 @@ public class PostagemController {
 	@DeleteMapping("/{id}")
 	public void deletePostagem(@PathVariable long id) {
 		repository.deleteById(id);
+	}
+	@GetMapping("/titulo/{text}")
+	public ResponseEntity<List<Postagem>> findByDescricao(@PathVariable String text)
+	{
+		return ResponseEntity.ok(repository.findByTitulo(text));
+				
 	}
 }

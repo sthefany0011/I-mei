@@ -57,11 +57,10 @@ public class TemaController
 		repository.deleteById(id);
 	}		
 	
-	@GetMapping("/tema/{text}")
+	@GetMapping("/descricao/{text}")
 	public ResponseEntity<List<Tema>> findByDescricao(@PathVariable String text)
 	{
 		return ResponseEntity.ok(repository.findByDescricao(text));
-				/*map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());*/
+				
 	}
 }

@@ -17,15 +17,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/usuario")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
-	
+
 	@Autowired
 	private UsuarioRepository repository;
-	
+
 	@GetMapping
 	public ResponseEntity<List<Usuario>> findAllUsuario() {
 		return ResponseEntity.ok(repository.findAll());
@@ -33,8 +32,7 @@ public class UsuarioController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> findByIdUsuario(@PathVariable long id) {
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
 	@PostMapping
@@ -50,5 +48,11 @@ public class UsuarioController {
 	@DeleteMapping("/{id}")
 	public void deleteUsuario(@PathVariable long id) {
 		repository.deleteById(id);
+	}
+
+	@GetMapping("/nome/{text}")
+	public ResponseEntity<List<Usuario>> findByNome(@PathVariable String text) {
+		return ResponseEntity.ok(repository.findByNome(text));
+
 	}
 }

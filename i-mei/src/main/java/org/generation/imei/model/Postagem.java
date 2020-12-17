@@ -28,6 +28,7 @@ public class Postagem {
 	// attributes
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_postagem")
 	private long id;
 	@NotNull
 	@Size(max = 100)
