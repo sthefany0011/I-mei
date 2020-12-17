@@ -57,7 +57,7 @@ public class TemaController
 		repository.deleteById(id);
 	}		
 	
-	@GetMapping("/{text}")
+	@GetMapping("/tema/{text}")
 	public ResponseEntity<List<Tema>> findByDescricao(@PathVariable String text)
 	{
 		return ResponseEntity.ok(repository.findByDescricao(text));
