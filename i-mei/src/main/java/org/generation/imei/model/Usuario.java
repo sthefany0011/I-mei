@@ -1,10 +1,14 @@
 package org.generation.imei.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -27,11 +31,11 @@ public class Usuario {
 	@NotNull
 	@Size(max = 12)
 	private String senha;
-	
-	//Relationship between tables (Usuario N --- 1 Postagem)
-	@ManyToOne
+
+	// Relationship between tables (Usuario N --- 1 Postagem)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	private Postagem postagem;
+	private List<Postagem> postagem;
 	
 	//getters and setters
 	public long getId() {
@@ -66,13 +70,12 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Postagem getPostagem() {
+	public List<Postagem> getPostagem() {
 		return postagem;
 	}
 
-	public void setPostagem(Postagem postagem) {
+	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
+
 }
