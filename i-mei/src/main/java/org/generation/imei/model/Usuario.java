@@ -31,7 +31,6 @@ public class Usuario {
 	@Size(max = 50)
 	private String nome;
 	@NotNull
-	@Size(max = 12)
 	private String senha;
 
 	// Relationship between tables (Usuario N --- 1 Postagem)
