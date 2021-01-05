@@ -23,6 +23,12 @@ public class UsuarioService {
 	public Usuario CadastrarUsuario(Usuario usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
+		Optional<Usuario> usuarioexiste = repository.findByEmail(usuario.getEmail()); //codigo para manter email como unico cadastro
+		
+		if(usuarioexiste.isPresent()) {
+			return null;
+		}
+		
 		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder); //chama o usuario e modifica o atributo senha, passando a senha encriptada
 		

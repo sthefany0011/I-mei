@@ -70,6 +70,11 @@ public class UsuarioController {
 
 	@PostMapping("/cadastrar") // tmb passa pelo filtro, mas nao eh barrado.
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+		//return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+		Usuario usuar = usuarioService.CadastrarUsuario(usuario);
+		if(usuar == null) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuar);
 	}
 }
