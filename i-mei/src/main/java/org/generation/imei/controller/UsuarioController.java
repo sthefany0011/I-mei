@@ -27,14 +27,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository repository;
-<<<<<<< HEAD
 	
 	private UsuarioService usuarioService;
 
-	
-=======
-
->>>>>>> 83ea119335ab73ae5fc29e31f8dcce57a633c0b6
 	@GetMapping
 	public ResponseEntity<List<Usuario>> findAllUsuario() {
 		return ResponseEntity.ok(repository.findAll());
@@ -59,7 +54,7 @@ public class UsuarioController {
 	public void deleteUsuario(@PathVariable long id) {
 		repository.deleteById(id);
 	}
-<<<<<<< HEAD
+
 	
 	@GetMapping("/nome/{text}")
 	public ResponseEntity<List<Usuario>> findByNome(@PathVariable String text) {
@@ -76,12 +71,5 @@ public class UsuarioController {
 	@PostMapping("/cadastrar") // tmb passa pelo filtro, mas nao eh barrado.
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
-=======
-
-	@GetMapping("/nome/{text}")
-	public ResponseEntity<List<Usuario>> findByNome(@PathVariable String text) {
-		return ResponseEntity.ok(repository.findByNome(text));
-
->>>>>>> 83ea119335ab73ae5fc29e31f8dcce57a633c0b6
 	}
 }

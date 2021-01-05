@@ -14,11 +14,8 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	public List<Usuario> findAllByNomeContainingIgnoreCase(String nome);
 
-<<<<<<< HEAD
 	public Optional<Usuario> findByEmail(String email);
 
-=======
 	@Query(value = "select * from db_i_mei.usuario where nome like :text%", nativeQuery=true)
 	public List<Usuario> findByNome(@Param ("text")String text);
->>>>>>> 83ea119335ab73ae5fc29e31f8dcce57a633c0b6
 }
