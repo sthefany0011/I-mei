@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -27,14 +28,8 @@ public class Postagem {
 	// attributes
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_postagem")
 	private long id;
-	@NotNull
-	@Size(max = 50)
-	//@Column(name = "fk_email")
-	private String email;
-	@NotNull
-	//@Column(name = "fk_tema")
-	private long post_tema;
 	@NotNull
 	@Size(max = 100)
 	private String titulo;
@@ -49,10 +44,12 @@ public class Postagem {
 
 	// Relationship between tables (Tema 1 --- N Postagem)
 	@ManyToOne
+	@JoinColumn(name = "fk_tema")
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	// Relationship between tables (Postagem N --- 1 usuario)
 	@ManyToOne
+	@JoinColumn(name = "fk_usuario")
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
@@ -62,18 +59,6 @@ public class Postagem {
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public long getPost_tema() {
-		return post_tema;
-	}
-	public void setPost_tema(long post_tema) {
-		this.post_tema = post_tema;
 	}
 	public String getTitulo() {
 		return titulo;

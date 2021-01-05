@@ -20,18 +20,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/usuario")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
-	
+
 	@Autowired
 	private UsuarioRepository repository;
+<<<<<<< HEAD
 	
 	private UsuarioService usuarioService;
 
 	
+=======
+
+>>>>>>> 83ea119335ab73ae5fc29e31f8dcce57a633c0b6
 	@GetMapping
 	public ResponseEntity<List<Usuario>> findAllUsuario() {
 		return ResponseEntity.ok(repository.findAll());
@@ -39,8 +42,7 @@ public class UsuarioController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> findByIdUsuario(@PathVariable long id) {
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
 	@PostMapping
@@ -57,6 +59,7 @@ public class UsuarioController {
 	public void deleteUsuario(@PathVariable long id) {
 		repository.deleteById(id);
 	}
+<<<<<<< HEAD
 	
 	@GetMapping("/nome/{text}")
 	public ResponseEntity<List<Usuario>> findByNome(@PathVariable String text) {
@@ -73,5 +76,12 @@ public class UsuarioController {
 	@PostMapping("/cadastrar") // tmb passa pelo filtro, mas nao eh barrado.
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+=======
+
+	@GetMapping("/nome/{text}")
+	public ResponseEntity<List<Usuario>> findByNome(@PathVariable String text) {
+		return ResponseEntity.ok(repository.findByNome(text));
+
+>>>>>>> 83ea119335ab73ae5fc29e31f8dcce57a633c0b6
 	}
 }
