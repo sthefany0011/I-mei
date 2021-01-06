@@ -19,7 +19,7 @@ public class SwaggerConfig {
 	public Docket docket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("generation.org.imei.controller"))
+				.apis(RequestHandlerSelectors.basePackage("org.generation.imei.controller"))
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(apiInfo());
@@ -35,7 +35,7 @@ public class SwaggerConfig {
 	}
 
 	private Contact contact() {
-		return new Contact("Cinthia T., Lucas C., João, Sthéfany e Sérgio", 
+		return new Contact("Cinthia Tengan, Lucas Correa, João Lira, Sthéfany Silva e Sérgio Ruiz", 
 				"https://github.com/sthefany0011/I-mei",
 				"Desenvolvedores Web Java Jr em formação pela Generation Brasil");
 	}
