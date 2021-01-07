@@ -1,13 +1,14 @@
 package org.generation.imei.model;
 
 public class UserLogin {
-
+	
+	// Atributos
 	private String nome;
 	private String email;
 	private String senha;
 	private String token;
 		
-	//getters and setters
+	//getters & setters
 	public String getNome() {
 	return nome;
 	}

@@ -19,8 +19,8 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins="*", allowedHeaders="*")
 @RequestMapping("/tema")
-public class TemaController 
-{
+public class TemaController {
+	
 	@Autowired
 	private TemaRepository repository;
 	
@@ -60,7 +60,7 @@ public class TemaController
 	@GetMapping("/descricao/{text}")
 	public ResponseEntity<List<Tema>> findByDescricao(@PathVariable String text)
 	{
-		return ResponseEntity.ok(repository.findByDescricao(text));
+		return ResponseEntity.ok(repository.findByDescricaoContainingIgnoreCase(text));
 				
 	}
 }

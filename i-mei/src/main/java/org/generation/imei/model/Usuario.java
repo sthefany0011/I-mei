@@ -11,6 +11,8 @@ import javax.persistence.Id;
 
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -20,25 +22,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "usuario")
 
 public class Usuario {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario")
 	private long id;
 	@NotNull
+	@Email
 	@Size(max = 50)
 	private String email;
 	@NotNull
 	@Size(max = 50)
 	private String nome;
-	@NotNull
+	@NotBlank
 	private String senha;
 
-	// Relationship between tables (Usuario N --- 1 Postagem)
+	// Relacionamento entre tabelas (Usuario N --- 1 Postagem)
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
-	//getters and setters
+	//getters & setters
 	public long getId() {
 		return id;
 	}

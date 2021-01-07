@@ -3,6 +3,8 @@ package org.generation.imei.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.generation.imei.model.UserLogin;
 import org.generation.imei.model.Usuario;
 import org.generation.imei.repository.UsuarioRepository;
@@ -40,10 +42,10 @@ public class UsuarioController {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
-	@PostMapping
+	/* @PostMapping //metodo em desuso, pois entra na camada de segurança
 	public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
-	}
+	}*/
 
 	@PutMapping
 	public ResponseEntity<Usuario> putUsuario(@RequestBody Usuario usuario) {
@@ -61,16 +63,15 @@ public class UsuarioController {
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(text));
 
 	}
-	//metodos para o security
-	@PostMapping("/logar") // login do usuario, endpoint q nao passa pelo filtro de segurança
+	//metodos para camada de segurança.
+	@PostMapping("/logar") // login do usuario, endpoint que nao passa pelo filtro de segurança
 	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user) {
 		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
-	@PostMapping("/cadastrar") // tmb passa pelo filtro, mas nao eh barrado.
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
-		//return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+	@PostMapping("/cadastrar") 
+	public ResponseEntity<Usuario> Post(@Valid @RequestBody Usuario usuario) { // utiliza a mesma validação do banco de dados
 		Usuario usuar = usuarioService.CadastrarUsuario(usuario);
 		if(usuar == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

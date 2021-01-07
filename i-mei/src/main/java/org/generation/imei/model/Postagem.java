@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class Postagem {
 
-	// attributes
+	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_postagem")
@@ -38,22 +38,22 @@ public class Postagem {
 	private String campo;
 	@NotNull
 	@Size(max = 200)
-	private String link_imagem;
+	private String linkImagem; // mudar na documentação
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date data_post = new java.sql.Date(System.currentTimeMillis());
+	private Date dataPost = new java.sql.Date(System.currentTimeMillis());
 
-	// Relationship between tables (Tema 1 --- N Postagem)
+	// Relacionamento entre tabelas (Tema 1 --- N Postagem)
 	@ManyToOne
 	@JoinColumn(name = "fk_tema")
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
-	// Relationship between tables (Postagem N --- 1 usuario)
+	// Relacionamento entre tabelas (Postagem N --- 1 usuario)
 	@ManyToOne
 	@JoinColumn(name = "fk_usuario")
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
-	// getters and setters
+	// getters & setters
 	public long getId() {
 		return id;
 	}
@@ -72,17 +72,17 @@ public class Postagem {
 	public void setCampo(String campo) {
 		this.campo = campo;
 	}
-	public String getLink_imagem() {
-		return link_imagem;
+	public String getLinkImagem() {
+		return linkImagem;
 	}
-	public void setLink_imagem(String link_imagem) {
-		this.link_imagem = link_imagem;
+	public void setLinkImagem(String linkImagem) {
+		this.linkImagem = linkImagem;
 	}
-	public Date getData_post() {
-		return data_post;
+	public Date getDataPost() {
+		return dataPost;
 	}
-	public void setData_post(Date data_post) {
-		this.data_post = data_post;
+	public void setDataPost(Date dataPost) {
+		this.dataPost = dataPost;
 	}
 	public Tema getTema() {
 		return tema;

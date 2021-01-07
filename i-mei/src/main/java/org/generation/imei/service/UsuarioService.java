@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
 
-	//regra de negocio para cadastrar usuario (é uma classe não interface)
+	// Regra de negocio para cadastrar o usuario (é uma classe não interface).
 
 	@Autowired
 	private UsuarioRepository repository;
 	
-	//metodo que recebe um usuario e retorna o usuario (cadastrar usuario)
+	//Método que recebe um usuario e retorna o usuario (cadastrar usuario)
 	public Usuario CadastrarUsuario(Usuario usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
@@ -30,30 +30,30 @@ public class UsuarioService {
 		}
 		
 		String senhaEncoder = encoder.encode(usuario.getSenha());
-		usuario.setSenha(senhaEncoder); //chama o usuario e modifica o atributo senha, passando a senha encriptada
+		usuario.setSenha(senhaEncoder); // Chama o usuario e modifica o atributo senha, passando a senha encriptada
 		
-		return repository.save(usuario); //salva o objeto usuario com a senha modificada.
+		return repository.save(usuario); // Salva o objeto usuario com a senha modificada.
 	}
-	//metodo logar
+	// Método logar da camada de segurança
 	
 	public Optional<UserLogin> Logar(Optional<UserLogin> user){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByEmail(user.get().getEmail());
 		
-	if(usuario.isPresent()) { // condição se o usuario tiver algo dentro, o metodo compara a senha encriptada com a senha digitada do usuario
-		if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) { //vai verificar se a senhas foram digitadas iguais
+	if(usuario.isPresent()) { // Condição se o usuario tiver algo dentro, o metodo compara a senha encriptada com a senha digitada do usuario
+		if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) { // vai verificar se a senhas foram digitadas iguais
 		
 		String auth = user.get().getEmail() + ":" + user.get().getSenha(); 
 		byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-		String authHeader = "Basic " + new String(encodeAuth); //autenticacao header, prefixo basic concatenando com + new string (converte o array de byte pra string)
+		String authHeader = "Basic " + new String(encodeAuth); // autenticacao header, prefixo basic concatenando com + new string (converte o array de byte pra string)
 		
-		user.get().setToken(authHeader); //preenche o token
-		user.get().setNome(usuario.get().getNome()); //acesso ao token e coloca o que veio no username
+		user.get().setToken(authHeader); // preenche o token
+		user.get().setNome(usuario.get().getNome()); // acesso ao token e coloca o que veio no username
 		
-		return user; //retorna o usuario
+		return user; // retorna o usuario
 		
 			}
 		}
-	 return null; // se nao entra desse if ele retorna um nulo. o usuario nao existe no banco de dados.
+	 return null; // se nao entra nesse if ele retorna um nulo. o usuario nao existe no banco de dados.
 	}
 }

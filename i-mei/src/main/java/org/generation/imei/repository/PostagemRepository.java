@@ -13,7 +13,5 @@ import org.springframework.stereotype.Repository;
 public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 	public List<Postagem> findAllByTituloContainingIgnoreCase(String titulo);
 	
-	@Query(value = "select * from db_i_mei.postagem where titulo like :text%", nativeQuery=true)
-	public List<Postagem> findByTitulo(@Param ("text")String text);
 
 }

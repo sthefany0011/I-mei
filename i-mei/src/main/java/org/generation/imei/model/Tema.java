@@ -19,28 +19,26 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tema")
 public class Tema {
 
+	// Atributos
 	@Id
 	@Column(name = "id_tema")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
 	@NotNull
 	@Size(max = 30)
 	private String categoria;
-
 	@Column(name = "tipo_venda")
 	@NotNull
 	private boolean tipoVenda;
-
 	@NotNull
 	private String descricao;
 
-	// relationship between tables (Tema 1 --- N Postagem)
+	// Relacionamento entre tabelas (Tema 1 --- N Postagem)
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 	
-	//getters and setters
+	//getters & setters
 	public long getId() {
 		return id;
 	}
