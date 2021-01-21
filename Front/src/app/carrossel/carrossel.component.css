@@ -1,0 +1,53 @@
+/* carousel */
+.img-1 {
+    background-color: black;
+    background-image: url('/assets/1.jpg');
+
+    min-height: 100vh;
+    min-width: 100vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.img-2 {
+    background-color: black;
+    background-image: url('/assets/2.jpg');
+
+    min-height: 100vh;
+    min-width: 100vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.img-3 {
+    background-color: black;
+    background-image: url('/assets/3.jpg');
+
+    min-height: 100vh;
+    min-width: 100vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.img-4 {
+    background-color: black;
+    background-image: url('/assets/4.jpg');
+
+    min-height: 100vh;
+    min-width: 100vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* carousel */
