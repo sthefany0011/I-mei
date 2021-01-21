@@ -14,4 +14,18 @@
     width: 200px;
     height: 200px;
 }
+
+.mt-100{
+    margin-top: 120px;
+    
+}
+
+.mt-40{
+    margin-top: 155px;
+    
+}
+
+.fonte{
+    color: #72077F;
+}
 /* tela de login */
