@@ -8,7 +8,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { CarrosselComponent } from './carrossel/carrossel.component';
+import { LoginboardComponent } from './loginboard/loginboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { CarrosselComponent } from './carrossel/carrossel.component';
     SobreComponent,
     MenuComponent,
     RodapeComponent,
-    CarrosselComponent
+    LoginboardComponent
   ],
   imports: [
     BrowserModule,
