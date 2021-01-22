@@ -1,60 +1,25 @@
-<div class="container-fluid">
+<!-- tela de fundo  -->
 
-    <div class="row">
-    
-    <div class="col-md-6" id="img-bg"></div>
-    <div class="col-md-6 mt-5 mb-5">
-    <div class="row d-flex justify-content-center">
-    <div class="col-md-10" >
-    
-    <h1 class= "text-center"> Cadastro </h1>
-    
-    <div class="form-group">
-    <label for="nome">Nome</label>
-    <input class="form-control" type="text" name="nome" id="nome"
-    placeholder="Seu nome">
-    </div>
-    
-    <div class="form-group">
-    <label for="usuario">Usúario</label>
-    <input class="form-control" type="text" name="usuario" id="usuario"
-    placeholder="Seu usúario">
-    </div>
-    
-    <div class="form-group">
-    <label for="foto">Link da Foto</label>
-    <input class="form-control" type="text" name="foto" id="foto"
-    placeholder="Foto de Perfil">
-    </div>
-    
-    <div class="form-group">
-    <label for="senha">Senha</label>
-    <input class="form-control" type="password" name="senha" id="senha"
-    placeholder="Sua Senha">
-    </div>
-    
-    <div class="form-group">
-    <label for="confirmSenha">Confirmar Senha</label>
-    <input class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-    placeholder="Confirme sua Senha">
-    </div>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active img-1">
+            <!-- div da imagem -->
+            <app-cadastroboard></app-cadastroboard>
+        </div>
+        <div class="carousel-item img-2">
+            <!-- div da imagem -->
+            <app-cadastroboard></app-cadastroboard>
+        </div>
+        <div class="carousel-item img-3">
+            <!-- div da imagem -->
+            <app-cadastroboard></app-cadastroboard>
+        </div>
 
-    <div class="form-group">
-    <label for="tipo">Tipo de usuário</label>
-    <select class="form-control" name="tipo" id="tipo">
-    <option>Selecione um tipo de usuário:</option>
-    <option value="normal">Normal</option>
-    <option value="adm">Administrador</option>
-    </select >
-    
+        <div class="carousel-item img-4">
+            <!-- div da imagem -->
+            <app-cadastroboard></app-cadastroboard>
+        </div>
     </div>
-    <div calass="d-flex justify-content-center">
-    <button type="submit" class="btn btn-danger mr-4" routerLink='/login'>Cancelar</button>
-    <button type="submit" class="btn btn-success">Cadastrar</button>
-    </div>
-    
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+</div>
+
+<!-- tela de fundo  -->
