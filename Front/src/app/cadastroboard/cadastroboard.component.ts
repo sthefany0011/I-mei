@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-cadastroboard',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroboardComponent implements OnInit {
 
-  constructor() { }
+  user: User= new User
+  confirmarSenha: string
+  tipoP: string
 
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
+
+  ngOnInit(){
+    window.scroll(0,0)
+  }
+
+  confirmSenha(event: any){
+    this.confirmarSenha = event.target.value
+  }
+
+  tipoPessoa(event: any){
+    this.tipoP = event.target.value
+  }
+
+  cadastrar(){
+    this.user.pessoa = this.tipoP
+    this.user.tipo = 'normal'
+
+    if(this.user.senha != this.confirmarSenha){
+      alert('As senhas não conferem, favor verificar se as senhas são iguais')
+    }else{
+      this.authService.cadastrar(this.user).subscribe((resp: User) =>{
+        this.user = resp
+        this.router.navigate(['/login'])
+        alert('Usuário cadastrado com sucesso!')
+      })
+    }
+
+
   }
 
 }

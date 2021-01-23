@@ -1,7 +1,9 @@
+import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -11,6 +13,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { LoginboardComponent } from './loginboard/loginboard.component';
 import { CadastroboardComponent } from './cadastroboard/cadastroboard.component';
 import { InicioComponent } from './inicio/inicio.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { InicioComponent } from './inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
