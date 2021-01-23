@@ -3,6 +3,18 @@
     margin-bottom: 200px;
     
 }
+
+.margemd{
+    margin-right: 430px;
+    
+    
+}
+.tm-social{
+    /* max-width: 100% !important; */
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+}
 .tm-social2{
     width: 350px;
     height: 350px;
@@ -25,7 +37,7 @@
 .box16 .social li{display:inline-block}
 .box16 .social li a{display:block;width:40px;height:40px;line-height:40px;background:#6d3795;margin-right:10px;transition:all .3s ease 0s}
 .box17 .icon li,.box17 .icon li a{display:inline-block}
-.box16 .social li a:hover{background:#bea041}
+.box16 .social li a:hover{background:#da8507}
 .box16 .social li:last-child a{margin-right:0}
 @media only screen and (max-width:990px){.box16{margin-bottom:30px}
 }
