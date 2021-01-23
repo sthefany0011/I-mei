@@ -36,6 +36,25 @@ public class Usuario {
 	private String nome;
 	@NotBlank
 	private String senha;
+	
+	@NotNull
+	private String foto;
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	private String usuario; // se é pj ou pf
+	
+	private String tipo; //se é admin ou normal
+	
+	
+
+
 
 	// Relacionamento entre tabelas (Usuario N --- 1 Postagem)
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -77,6 +96,22 @@ public class Usuario {
 
 	public List<Postagem> getPostagem() {
 		return postagem;
+	}
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public void setPostagem(List<Postagem> postagem) {
