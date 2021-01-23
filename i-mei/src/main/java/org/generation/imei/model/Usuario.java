@@ -39,25 +39,14 @@ public class Usuario {
 	
 	@NotNull
 	private String foto;
-	
-	public String getFoto() {
-		return foto;
-	}
 
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
-	private String usuario; // se é pj ou pf
+	private String pessoa; // se é pj ou pf
 	
 	private String tipo; //se é admin ou normal
 	
 	
-
-
-
 	// Relacionamento entre tabelas (Usuario N --- 1 Postagem)
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
@@ -98,13 +87,7 @@ public class Usuario {
 		return postagem;
 	}
 	
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
+	
 
 	public String getTipo() {
 		return tipo;
@@ -117,5 +100,22 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(String pessoa) {
+		this.pessoa = pessoa;
+	}
+	
 
 }

@@ -3,18 +3,27 @@ package org.generation.imei.model;
 public class UserLogin {
 	
 	// Atributos
+	private long id;
 	private String nome;
 	private String email;
 	private String senha;
 	private String token;
-	private String usuario;
+	private String pessoa;
 	private String foto;
 	private String tipo;
 		
 	//getters & setters
-	public String getNome() {
-	return nome;
+		
+	public long getId() {
+		return id;
 	}
+	public void setId(long id) {
+		this.id = id;		
+	}
+	
+	public String getNome() {
+		return nome;
+		}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -36,12 +45,7 @@ public class UserLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
+
 	public String getFoto() {
 		return foto;
 	}
@@ -54,5 +58,12 @@ public class UserLogin {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	public String getPessoa() {
+		return pessoa;
+	}
+	public void setPessoa(String pessoa) {
+		this.pessoa = pessoa;
+	}
+	
 	
 }

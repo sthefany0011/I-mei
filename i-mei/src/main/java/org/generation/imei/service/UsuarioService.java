@@ -49,6 +49,12 @@ public class UsuarioService {
 		
 		user.get().setToken(authHeader); // preenche o token
 		user.get().setNome(usuario.get().getNome()); // acesso ao token e coloca o que veio no username
+		user.get().setEmail(usuario.get().getEmail());
+		user.get().setFoto(usuario.get().getFoto());
+		user.get().setTipo(usuario.get().getTipo());
+		user.get().setPessoa(usuario.get().getPessoa());
+		user.get().setId(usuario.get().getId());
+		
 		
 		return user; // retorna o usuario
 		
