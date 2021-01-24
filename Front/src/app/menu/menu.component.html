@@ -10,20 +10,24 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item active">
-            <img src="https://i.imgur.com/6UfLHGB.jpg" alt=" Imagem User" width="50px" height="50px" class="img-fluid rounded-circle">
+        <li class="nav-item active">  
+            <!-- por meio do {{foto}} a foto que já esta vinculada com o bd -->
+            <img src="{{foto}}" alt=" Imagem User" class="img-fluid rounded-circle imgsocial">
+        </li>
+        <li class="nav-item">
+            <p class="font-weight-bold text-white fs-16">{{nome}} </p>
         </li>        
         <li class="nav-item active">
-            <a class="nav-link" style="color: #ffffff" href="#">Home <span class="sr-only">(página atual)</span></a>
+            <a class="nav-link text-white fs-16" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="color:#ffffff" href="#">Link</a>
+            <a class="nav-link text-white fs-16" href="#">Link</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="color:#ffffff" href="#">Link</a>
+            <a class="nav-link text-white fs-16" href="#">Link</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="color: #ffffff" href="#">Link</a>
+            <a class="nav-link text-white fs-16" href="#">Link</a>
         </li>        
         
         <li class="nav-item dropdown">
@@ -43,6 +47,14 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                 <button class="btn my-2 my-sm-0" type="submit" style="background-color: #72077f">Pesquisar</button>
             </form>
+
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item pl-3">
+                    <a (click)= 'sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                  </li> 
+              </ul>
+            
+        
         
     </div>    
 </nav>
