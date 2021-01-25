@@ -1,53 +1,31 @@
-/* carousel */
-.img-1 {
-    background-color: black;
-    background-image: url('/assets/1.jpg');
+/* tela de login */
+.bg-login {
+    background: rgba(250, 244, 244, 0.65); /*deixa o fundo opaco*/
+    border: 1px solid #FCFBFB;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 
-    min-height: 100vh;
-    min-width: 100vh;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    width: 768px;
+    height: 523px;
 }
 
-.img-2 {
-    background-color: black;
-    background-image: url('/assets/2.jpg');
-
-    min-height: 100vh;
-    min-width: 100vh;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.tm-social2{
+    width: 200px;
+    height: 200px;
 }
 
-.img-3 {
-    background-color: black;
-    background-image: url('/assets/3.jpg');
-
-    min-height: 100vh;
-    min-width: 100vh;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.mt-100{
+    margin-top: 120px;
+    
 }
 
-.img-4 {
-    background-color: black;
-    background-image: url('/assets/4.jpg');
-
-    min-height: 100vh;
-    min-width: 100vh;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.mt-40{
+    margin-top: 100px;
+    
 }
-/* carousel */
+
+.fonte{
+    color: #72077F;
+}
+/* tela de login */

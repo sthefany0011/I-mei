@@ -5,6 +5,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { SobreComponent } from './sobre/sobre.component';
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 
