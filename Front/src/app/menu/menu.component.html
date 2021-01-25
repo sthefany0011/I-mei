@@ -1,61 +1,52 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-ligth" style="background-color: #130538">
+<nav class="navbar navbar-expand-lg navbar-ligth" style="background-color: #72077f">
         
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
     </button>
 
-
+    <!--Pesquisar-->
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
+            <form class="form-inline my-2 my-lg-0">
+                
+                
+                <input class="form-control mr-sm-0 text-white" style="border-radius: 30px; background-color: #130538;" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                             
+                <button class="btn my-2 my-sm-0" style="background-color: #72077f"><i class="fa fa-search" aria-hidden="true"></i></button>
+                  
+                </form>            
+            </ul>   
+        </div>
+    <!--/Pesquisar-->    
+     
+    <!--Nome do Usuário--> 
+    <li class="nav-item dropdown d-flex" style="border-radius: 30px; background-color: #130538;">
+     
+        <a class="nav-link" style="color: #ffffff;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{nome}}
+        </a>
 
-        <li class="nav-item active">  
-            <!-- por meio do {{foto}} a foto que já esta vinculada com o bd -->
+        <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown" style="background-color:  #130538;">
+            <a class="dropdown-item text-white d-flex justify-content-center" style="background-color: #130538;" href="#">Ação</a>
+            <a class="dropdown-item text-white d-flex justify-content-center" style="background-color: #130538;" href="#">Outra ação</a>
+            <a class="dropdown-item text-white d-flex justify-content-center" style="background-color: #130538;" href="#">Outra ação</a>            
+        </div>              
+    </li>
+    <!--/Nome do Usuário-->   
+
+    <!--Foto Usuário + Botão Sair--> 
+    <ul class="navbar-nav ml-auto d-flex align-items-center pl-2">
+        <li class="nav-item active">        
             <img src="{{foto}}" alt=" Imagem User" class="img-fluid rounded-circle imgsocial">
         </li>
-        <li class="nav-item">
-            <p class="font-weight-bold text-white fs-16">{{nome}} </p>
-        </li>        
-        <li class="nav-item active">
-            <a class="nav-link text-white fs-16" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white fs-16" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white fs-16" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white fs-16" href="#">Link</a>
-        </li>        
-        
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Ação</a>
-            <a class="dropdown-item" href="#">Outra ação</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Algo mais aqui</a>
-            </div>
-        </li>        
+    
+        <li class="nav-item pl-2">            
+           <a (click)= 'sair()'><i class="fa fa-sign-in" style="font-size: 35px;" aria-hidden="true"></i></a>
+        </li> 
     </ul>
+    <!--/Foto Usuário + Botão Sair-->   
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn my-2 my-sm-0" type="submit" style="background-color: #72077f">Pesquisar</button>
-            </form>
 
-            <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <li class="nav-item pl-3">
-                    <a (click)= 'sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-                  </li> 
-              </ul>
-            
-        
-        
-    </div>    
 </nav>
 <!--/Navbar-->
