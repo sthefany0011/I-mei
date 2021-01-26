@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .logo{
+      margin-left: 50px;
+  }
+
+  .margem{
+    margin-left: 300px;
+}
+
+  .nav-item {
+    font-size: 14pt;
+    color: white;
+    padding-right: 20px;
+    font-family:  Roboto, sans-serif;
+  }
+
+  .titulo{
+    font-size: 30pt;
+    color: white;
+    font-family:  Roboto Slab, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  .titulo2{
+    font-size: 50pt;
+    color: white;
+    font-family:  Roboto Slab, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
+
+  .parallax {
+    background-image: url("/assets/5.jpg");
+
+    min-height: 700px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 0px;
+}
+  
