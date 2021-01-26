@@ -1,58 +1,144 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-        <img src="/assets/logo.png" alt="Logo" width="90px" height="90px" class="img-fluid logo">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class=" fixed-top navbar navbar-expand-md navbar-light" style="background-color: #130538">
+    <img src="/assets/imei2.png" alt="Logo" width="90px" height="90px" class="img-fluid logo">
+    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse  d-flex justify-content-center" id="conteudoNavbarSuportado">
-            <ul class="nav navbar-nav mr-5 d-flex align-items-center">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#intro">intro <span class="sr-only">(página atual)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Ação</a>
-                        <a class="dropdown-item" href="#">Outra ação</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Algo mais aqui</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Desativado</a>
-                </li>
-            </ul>
-            <li class="nav-item" style="padding-right: 0% !important">
-                <a class="btn btn-outline-success my-2 my-sm-0" role="button" data-bs-toggle="button">Entrar</a>
-              </li>
-            
-        </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link text-white ml-1" href="#intro">Intro<span class="sr-only">(Página atual)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white ml-1" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white ml-1" href="#dev">Desenvolvedores</a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-4 ml-1 botao" type="submit">Entrar</button>
+        </form>
     </div>
 </nav>
 
 
-<div class="parallax p-0">
+<div id="intro" class="parallax p-0">
 
-    <div class="container-fluid" style="padding-top: 30%;">
+    <div class="container-fluid" style="padding-top: 20%;">
         <div class="row d-flex justify-content-center">
             <div class="col-md-7">
-                <p class="titulo2 margem">I-mei</p>
-                <p class="titulo">Conectando micro e pequenos empresários</p>
+                <img src="/assets/imei2.png" alt="Logo" width="200px" height="90px" class="img-fluid margem">
+                <p class="titulo mb-5">Conectando micro e pequenos empresários</p>
             </div>
         </div>
 
     </div>
+</div>
+
+<div id="sobre" class="d-flex align-items-center container-fluid">
+    <div class="container-fluid">
+
+        <h3 class="text-center titulo3 mt-5">Sobre</h3>
+        <p class="text-center texto ">Rede social criada com o intuito de divulgar para a comunidade, os produtos e
+            serviços dos pequenos empresários. Assim gerando renda </p>
+        <p class="text-center">
+            <img src="/assets/divulgacao.png" width="1200px" height="500px">
+        </p>
+
+    </div>
+</div>
+
+
+
+
+
+<div id="dev" class="container-fluid ">
+    <br>
+    <br>
+    <br>
+    <h3 class="text-center titulo4">&lt;Dev Team&gt;</h3>
     <br>
     <br>
     <br>
     <br>
     <br>
-    <br>
+    
+        <div class="d-flex justify-content-center row ml-4">
+            <div class="col">
+                <div class="box16 tm-social">
+                    <img class="tm-social" src="https://i.imgur.com/LwIKM0E.jpg">
+                    <div class="box-content">
+                        <h3 class="title">João Lira</h3>
+                        <span class="post">Desenvolvedor Java Jr</span>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box16 tm-social">
+                    <img class="tm-social" src="https://i.imgur.com/HiMf5cI.png">
+                    <div class="box-content">
+                        <h3 class="title">Lucas Côrrea</h3>
+                        <span class="post">Desenvolvedor Java Jr</span>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box16 tm-social">
+                    <img class="tm-social" src="https://i.imgur.com/IOFMk5D.jpg">
+                    <div class="box-content">
+                        <h3 class="title">Sthefany Silva</h3>
+                        <span class="post">Desenvolvedora Java Jr</span>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box16 tm-social">
+                    <img class="tm-social" src="https://i.imgur.com/wk4ir7Q.jpg">
+                    <div class="box-content">
+                        <h3 class="title">Sergio Ruiz</h3>
+                        <span class="post">Desenvolvedor Java Jr</span>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+                <div class="box16 tm-social">
+                    <img class="tm-social " src="https://i.imgur.com/1sGUipx.png">
+                    <div class="box-content">
+                        <h3 class="title">Cinthia Tengan</h3>
+                        <span class="post">Desenvolvedora Java Jr</span>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+</div>
+<app-rodape></app-rodape>
