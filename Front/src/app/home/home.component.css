@@ -12,6 +12,15 @@
       width: 70px;
       height: 30px;
 }
+
+.btn-outline-dark {
+  color: #72077f !important;
+  border-color:  #72077f !important;
+}
+
+.btn {
+  color:#72077f !important;
+}
   
   .logo{
       margin-left: 50px;
