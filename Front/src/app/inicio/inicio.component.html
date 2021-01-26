@@ -2,8 +2,10 @@
     <div class="row ">
         <div class="col d-flex justify-content-start ">
 
-            <button class="btn corfundo mr-2 mb-3 mt-3 text-white"> Nova postagem</button>
-            <a class="btn corfundo mr-2 mb-3 mt-3 text-white" href=''>Ver postagens</a>
+            <!-- botão que aciona o modal: -->
+            <button class="btn corfundo mr-2 mb-3 mt-3 text-white" data-toggle="modal" data-target="#NovaPostagem"> Nova postagem</button>
+            <!-- fim botao modal -->
+            <a class="btn corfundo mr-2 mb-3 mt-3 text-white" href='#postagens'>Ver postagens</a>
 
         </div>
         <div class="col d-flex justify-content-start">
@@ -13,7 +15,7 @@
 
 </div>
 
-<div class="container">
+<div class="container" id="postagens">
     <nav>
         <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
@@ -43,3 +45,39 @@
         </div>
       </div>
 </div>
+
+<!-- Inicio do modal -->
+
+  <div class="modal fade" id="NovaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- corpo do modal -->
+            <div class="form-group">
+                <label for="titulo">Titulo</label>
+                <input type = "text" class="form-control" id="titulo" placeholder= "Digite o titulo">
+            </div>
+            <div class="form-group">
+                <label for="texto">Texto</label>
+                <textarea class="form-control" name="texto" id="texto" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tema">Escolha um tema</label>
+               <select class="form-control" name="tema" id="tema"></select>
+            </div>
+
+        <!-- /corpo do modal -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="text-white btn botao2 " data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn botao text-white">Publicar</button>
+        </div>
+      </div>
+    </div>
+  </div>
