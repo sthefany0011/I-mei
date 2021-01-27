@@ -41,7 +41,8 @@ export class TemaComponent implements OnInit {
       this.finAllTemas() // toda vez que inserir um tema, será atualizado com este método
       this.tema = new Tema()
     })
-    
   }
 
+
+  
 }
