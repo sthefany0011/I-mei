@@ -36,7 +36,7 @@ public class Postagem {
 	@NotNull
 	@Size(max = 1000)
 	private String campo;
-	@NotNull
+	//@NotNull
 	@Size(max = 200)
 	private String linkImagem; // mudar na documentação
 	@Temporal(TemporalType.TIMESTAMP)

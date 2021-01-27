@@ -24,11 +24,11 @@ public class Tema {
 	@Column(name = "id_tema")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@NotNull
+	//@NotNull
 	@Size(max = 30)
 	private String categoria;
 	@Column(name = "tipo_venda")
-	@NotNull
+	//@NotNull
 	private boolean tipoVenda;
 	@NotNull
 	private String descricao;
