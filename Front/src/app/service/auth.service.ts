@@ -23,6 +23,11 @@ export class AuthService {
 
   }
 
+  atualizar(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:8080/usuario/atualizar', user)
+
+  }
+
   getByIdUser(id: number): Observable<User> {
     return this.http.get<User>(`http://localhost:8080/usuario/${id}`)
   }
