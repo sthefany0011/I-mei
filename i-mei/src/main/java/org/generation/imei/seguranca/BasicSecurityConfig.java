@@ -33,6 +33,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/usuario/logar").permitAll()
 		.antMatchers("/usuario/cadastrar").permitAll()
 		.antMatchers("/usuario/{id}").permitAll()
+		.antMatchers("/usuario/atualizar").permitAll()
 		.anyRequest().authenticated().and().httpBasic().and().sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().cors().and().csrf().disable();
 		// para liberar endpoints dentro do controller para o cliente ter acesso a ele

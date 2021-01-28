@@ -62,4 +62,21 @@ public class UsuarioService {
 		}
 	 return null; // se nao entra nesse if ele retorna um nulo. o usuario nao existe no banco de dados.
 	}
+	
+	public Usuario Atualizar(Usuario usuario) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+		Optional<Usuario> usuarioexiste = repository.findByEmail(usuario.getEmail()); //codigo para manter email como unico cadastro
+		
+		if(usuarioexiste.isPresent()) {
+			if(usuario.getId() != usuarioexiste.get().getId()) {
+				return null;
+			}
+		}
+		
+		String senhaEncoder = encoder.encode(usuario.getSenha());
+		usuario.setSenha(senhaEncoder); // Chama o usuario e modifica o atributo senha, passando a senha encriptada
+		
+		return repository.save(usuario); // Salva o objeto usuario com a senha modificada.
+	}
 }

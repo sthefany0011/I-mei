@@ -72,9 +72,18 @@ public class UsuarioController {
 
 	@PostMapping("/cadastrar") 
 	public ResponseEntity<Usuario> Post(@Valid @RequestBody Usuario usuario) { // utiliza a mesma validação do banco de dados
-		Usuario usuar = usuarioService.CadastrarUsuario(usuario);
+		Usuario usuar = usuarioService.CadastrarUsuario(usuario); // receber nullo
 		if(usuar == null) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build(); 
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuar);
+	}
+	
+	@PutMapping("/atualizar")
+	public ResponseEntity<Usuario> Put(@Valid @RequestBody Usuario usuario) { // utiliza a mesma validação do banco de dados
+		Usuario usuar = usuarioService.Atualizar(usuario); // receber nullo
+		if(usuar == null) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build(); 
 		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuar);
 	}
