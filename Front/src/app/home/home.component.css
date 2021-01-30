@@ -7,20 +7,9 @@
     scroll-behavior: smooth;
   }
 
-  .botao{
 
-      width: 70px;
-      height: 30px;
-}
 
-.btn-outline-dark {
-  color: #72077f !important;
-  border-color:  #72077f !important;
-}
 
-.btn {
-  color:#72077f !important;
-}
   
   .logo{
       margin-left: 50px;
@@ -33,16 +22,18 @@
 
   .nav-item {
     font-size: 14pt;
+    font-family: Aksara Bali Galang;
     color: white;
     padding-right: 20px;
-    font-family:  Roboto, sans-serif;
+    font-family:  aks;
   }
 
   .titulo{
-    font-size: 30pt;
+    font-size: 40pt;
     color: white;
-    font-family:  Roboto Slab, sans-serif;
+    font-family: Alata;
     text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 0px;
   }
   .titulo2{
     font-size: 50pt;
@@ -50,6 +41,33 @@
     font-family:  Roboto Slab, sans-serif;
     text-shadow: 2px 2px 4px #000000;
   }
+
+  .btn{
+    border-radius: 7px !important;
+    align-items: center !important;
+  }
+  .botao{
+
+    background-color: #72077f;
+    opacity: 0.7;
+    width: 140px;
+    height: 40px; 
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.botao:hover { 
+  
+  background-color: #72077f;
+  opacity: 1;
+    width: 140px;
+    height: 40px; 
+    display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
 
   .titulo3{
     font-size: 30pt;
@@ -119,7 +137,7 @@
   
 
   .parallax {
-    background-image: url("/assets/5.jpg");
+    background-image: url("/assets/sobre.jpg");
 
     min-height: 700px;
     background-attachment: fixed;
