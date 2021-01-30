@@ -1,38 +1,41 @@
-<div class="carousel-caption">
-    <div class="container d-flex justify-content-center bg-login">
+<div class="container-fluid bg-img">
 
-        <div class="row d-flex justify-content-center"></div>
-        <div class="col-md-5">
-            <div class="col-md-4">
+    <div class="d-flex align-items-center">
+        <a class="btn btn-home text-white" href="">Home</a>
+    </div>
 
-                <img class="tm-social2 ml-5 mt-100 " src="/assets/logo.png" alt="logo">
+    <div class="d-flex justify-content-center align-items-center" id="container-login">
+        <div class="row d-flex justify-content-center align-items-cente bg-login">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="logo" src="/assets/logo.png" alt="AAA">
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 mt-40 ">
-           
-                <!-- <h1 class="text-center">Entrar</h1> -->
-                <div class="form-group">
-                    <!-- <label for="">Usuário</label> -->
-                    <input [(ngModel)]='userLogin.email' class="form-control" type="text" name="email" id="email" placeholder="E-mail">
+
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input [(ngModel)]='userLogin.email' class="form-control" type="text" name="email" id="email"
+                            placeholder="E-mail">
+                    </div>
+
+                    <div class="form-group">
+                        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha"
+                            id="senha" placeholder="Senha">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-roxo text-white" (click)='entrar()'>Entrar</button>
+                    </div>
+
+                    <p class="text-center text-dark mt-3"> Não tem uma conta? <strong><a class="fonte"
+                                style="text-decoration:none" routerLink='/cadastro'>Cadastre-se</a></strong>
+                    </p>
                 </div>
-
-                <div class="form-group">
-                    <!-- <label for="">Senha</label> -->
-                    <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
-                </div>
-
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-success" (click)='entrar()' >Entrar</button>
-                </div>
-
-                <hr class="mt-5 mb-5">
-
-                <p class="text-center text-dark"> Não tem uma conta? <strong><a class="fonte"  style="text-decoration:none" routerLink='/cadastro'>Cadastre-se</a></strong>
-                </p>
-                <div class="d-flex justify-content-start">
-                <p class="text-dark"><strong><a class="fonte"  style="text-decoration:none" routerLink='/home'>Sair</a></strong>
-                </p></div>
             </div>
-    
+
         </div>
+    </div>
+</div>
        
