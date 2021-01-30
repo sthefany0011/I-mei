@@ -6,10 +6,6 @@
   html {
     scroll-behavior: smooth;
   }
-
-
-
-
   
   .logo{
       margin-left: 50px;
@@ -20,12 +16,19 @@
     margin-left: 300px;
 }
 
-  .nav-item {
+  .texto-menu {
     font-size: 14pt;
     font-family: Aksara Bali Galang;
     color: white;
     padding-right: 20px;
-    font-family:  aks;
+  
+  }
+
+  .texto{
+    font-size: 20pt;
+    color: white;
+    font-family: Alata;
+    
   }
 
   .titulo{
@@ -36,10 +39,20 @@
     margin-bottom: 0px;
   }
   .titulo2{
-    font-size: 50pt;
+    font-size: 20pt;
     color: white;
     font-family:  Roboto Slab, sans-serif;
-    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 0px;
+    margin-top: 100px;
+  }
+  .titulo3{
+    font-size: 35pt;
+    color: white;
+    font-family: Alata;
+    text-shadow: 2px 2px 4px #72077f;
+    margin-bottom: 0px;
+    margin-top: 100px;
+     
   }
 
   .btn{
@@ -69,12 +82,7 @@
   
 }
 
-  .titulo3{
-    font-size: 30pt;
-    color: #72077f;
-    font-family:  Roboto Slab, sans-serif;
-     
-  }
+ 
   .titulo4{
     font-size: 30pt;
     color: #ffffff;
@@ -128,16 +136,11 @@
 @media only screen and (max-width:990px){.box16{margin-bottom:30px}
 }
 
-  .texto{
-    font-size: 20pt;
-    color: #72077f;
-    font-family:  Roboto Slab, sans-serif;
-     
-  }
+
   
 
   .parallax {
-    background-image: url("/assets/sobre.jpg");
+    background-image: url("/assets/sobre2.jpg");
 
     min-height: 700px;
     background-attachment: fixed;
@@ -150,15 +153,30 @@
 #sobre {
   margin: 0;
   border: 0;
-  height: max-content;
+  height: 660px;
+  background: rgba(114, 7, 127, 0.6);
  
+}
+
+#produtos{
+  margin: 0;
+  border: 0;
+  height: 700px;
+  background-color: #72077f;
+  text-shadow: 2px 2px 4px #500558;
 }
 
 #dev {
   margin: 0;
   border: 0;
-  height: 580px;
-  background-color: #72077f;
+  height: 550px;
+  background: rgba(114, 7, 127, 0.6);
+
  
+}
+
+.produto{
+  width: 100px;
+  height: 100px;
 }
   
