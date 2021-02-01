@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
+      environment.tipo = this.userLogin.tipo
 
       // descomente o código abaixo para fazer testes no console, pra saber se após clicar em logar as variaveis estaos sendo passadas:
       console.log(environment.token)

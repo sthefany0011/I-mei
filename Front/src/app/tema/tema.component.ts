@@ -23,8 +23,12 @@ export class TemaComponent implements OnInit {
 
   ngOnInit(){
     if(environment.token == ''){
-      this.alertas.showAlertInfo('sua sessão expirou, faça login novamente.')
+      this.alertas.showAlertInfo('Sua sessão expirou, faça login novamente.')
       this.router.navigate(['/login'])
+    }
+    if(environment.tipo != 'adm'){
+      this.alertas.showAlertInfo('Você precisa ser adm para acessar essa rota!')
+      this.router.navigate(['/inicio'])
     }
 
     this.finAllTemas() // toda vez que inicia a page tema o método é chamado!
