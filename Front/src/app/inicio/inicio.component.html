@@ -1,11 +1,159 @@
 <div class="container-fluid">
+  <div class="row d-flex">
+    <div class="col-md-2 menu">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark flex-column">
+        <div class="row mt-4 mb-4">
+          <div class="col d-flex justify-content-center">
+            <img src="/assets/imei2.png" alt="Logo da empresa" style="width: 100px;" height="50px">
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+
+        <div class="collapse navbar-collapse flex-column" id="conteudoNavbarSuportado">
+
+          <div class="row d-flex align-items-center justify-content-center flex-column">
+            <div class="col-md-12">
+              <img class="rounded div-img" style="width: 80px;"
+                src="https://s2.glbimg.com/IoFLGKuDAOV-j6IVz02cJhwrfO8=/696x390/top/smart/s2.glbimg.com/H9-_uUNlU3P6ISRFkTs4DDHzGfg=/0x65:695x485/695x420/s.glbimg.com/po/tt2/f/original/2015/06/26/boato-ou-verdade-facebook-vai-mostrar-quem-visitou-seu-perfil-na-rede0c3b6279bffc8c8269450a8d8ad7924e.jpg"
+                alt="Foto de perfil">
+
+            </div>
+
+            <!-- <div class="col-md-8 pl-5 bg-success"><span class="text-white">Maria José da Silva pinheiros</span></div> -->
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col text-center">
+                  <span class="text-white text-center">Maria José da Silva pinheiros</span>
+                </div>
+              </div>
+              
+              <ul class="navbar-nav mr-auto nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <li class="nav-item active mt-4">
+                      <a class="active ml-5" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                        aria-controls="v-pills-home" aria-selected="true">Editar perfil</a>
+                    </li>
+
+
+                <div class="dropdown-divider mt-4"></div>
+
+                <!-- <div>
+                  <div class="col">
+                    <span class="text-white">Publicações</span>
+                  </div>
+                </div> -->
+
+                <li class="mt-4">
+                  <span class="text-white ml-5"> Publicações </span>
+                </li>
+
+                <li class="mt-4">
+                  <a class="ml-5" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                    aria-controls="v-pills-profile" aria-selected="false">Todas</a>
+                </li>
+                <li class="mt-2">
+                  <a (click)='findByIdUser()' class="ml-5" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                    aria-controls="v-pills-messages" aria-selected="false">Minhas</a>
+                </li>
+
+                <li class="nav-item mt-2">
+                  <a class="ml-5" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+                    aria-controls="v-pills-settings" aria-selected="false">Por tema</a>
+                </li>
+
+                <a class="mt-100 ml-5" href="">Sair</a>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">AAA
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="card-columns">
+            <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+              <div class="card-body">
+                <h5 class="card-title m-0"> {{item.titulo}} </h5>
+                <small class="text-muted">Tema: {{item.tema.descricao}} </small>
+                <p class="card-text mt-3"> {{item.campo}} </p>
+                <p class="card-text">
+                  <small class="text-muted"> {{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date: 'HH:mm'}}
+                  </small>
+                </p>
+    
+                <p class="card-text">
+                  <small class="text-muted">By: {{item.usuario.nome}} </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+            <div class="card-columns">
+              <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                <div class="card-body">
+                  <h5 class="card-title m-0"> {{item.titulo}} AAAAAAA </h5>
+                  <small class="text-muted">Tema: {{item.tema.descricao}} AAAAAAAAA </small>
+                  <p class="card-text mt-3"> {{item.campo}} AAAAAAAA </p>
+                  <p class="card-text">
+                    <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date:
+                      'HH:mm'}}</small>
+                  </p>
+      
+                  <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+                  <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <div class="card-columns" *ngFor='let tema of listaTemas'>
+            <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+              <div class="card-body">
+                <h5 class="card-title m-0"> {{item.titulo}} </h5>
+                <p class="card-text mt-3"> {{item.campo}} </p>
+                <p class="card-text">
+                  <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date:
+                    'HH:mm'}}</small>
+                </p>
+    
+                <p class="card-text">
+                  <small class="text-muted">By: {{item.usuario.nome}} </small>
+                </p>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="container-fluid">
   <div class="row ">
     <div class="col d-flex justify-content-start ">
 
-      <!-- botão que aciona o modal: -->
+
       <button class="btn corfundo mr-2 mb-3 mt-3 text-white" data-toggle="modal" data-target="#NovaPostagem"> Nova
         postagem</button>
-      <!-- fim botao modal -->
+
       <a class="btn corfundo mr-2 mb-3 mt-3 text-white" href='#postagens'>Ver postagens</a>
 
     </div>
@@ -23,8 +171,9 @@
       <a class="nav-item nav-link active" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab"
         aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
 
-      <a (click)='findByIdUser()' class="nav-item nav-link" id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
-        aria-controls="nav-minhasPostagens" aria-selected="false">Minhas postagens</a>
+      <a (click)='findByIdUser()' class="nav-item nav-link" id="nav-minhasPostagens-tab" data-toggle="tab"
+        href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
+        postagens</a>
 
       <a class="nav-item nav-link" id="nav-postagemTema" data-toggle="tab" href="#postagemTema" role="tab"
         aria-controls="nav-postagemTema" aria-selected="false">Postagens por tema</a>
@@ -34,17 +183,18 @@
 
   <div class="tab-content mt-5" id="nav-tabContent">
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
-     
+
       <div class="row d-flex justify_content-center mt-5 mb-5">
         <div class="col-md-4">
-        <div class="form-group">
-        <input type  ="text" class="form-control"id="titulo" placeholder="Digite um titulo de postagem para pesquisar"
-        [(ngModel)]="tituloPost"(keyup)='findByTituloPostagem()'>
-        
+          <div class="form-group">
+            <input type="text" class="form-control" id="titulo"
+              placeholder="Digite um titulo de postagem para pesquisar" [(ngModel)]="tituloPost"
+              (keyup)='findByTituloPostagem()'>
+
+          </div>
         </div>
-        </div>
-        </div>
-     
+      </div>
+
       <div class="card-columns">
         <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
           <div class="card-body">
@@ -52,7 +202,8 @@
             <small class="text-muted">Tema: {{item.tema.descricao}} </small>
             <p class="card-text mt-3"> {{item.campo}} </p>
             <p class="card-text">
-              <small class="text-muted"> {{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date: 'HH:mm'}} </small>
+              <small class="text-muted"> {{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date: 'HH:mm'}}
+              </small>
             </p>
 
             <p class="card-text">
@@ -63,7 +214,7 @@
       </div>
 
     </div>
-    
+
 
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-profile-tab">
 
@@ -74,7 +225,8 @@
             <small class="text-muted">Tema: {{item.tema.descricao}} </small>
             <p class="card-text mt-3"> {{item.campo}} </p>
             <p class="card-text">
-              <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date: 'HH:mm'}}</small>
+              <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date:
+                'HH:mm'}}</small>
             </p>
 
             <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
@@ -89,22 +241,23 @@
 
       <div class="row d-flex justify_content-center mt-5 mb-5">
         <div class="col-md-4">
-        <div class="form-group">
-        <input type  ="text" class="form-control"id="titulo" placeholder="Digite um tema para pesquisar"
-        [(ngModel)]="descricaoTema"(keyup)='findByDescricaoTema()'>
-        
+          <div class="form-group">
+            <input type="text" class="form-control" id="titulo" placeholder="Digite um tema para pesquisar"
+              [(ngModel)]="descricaoTema" (keyup)='findByDescricaoTema()'>
+
+          </div>
         </div>
-        </div>
-        </div>
-        
-      
+      </div>
+
+
       <div class="card-columns" *ngFor='let tema of listaTemas'>
         <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
           <div class="card-body">
             <h5 class="card-title m-0"> {{item.titulo}} </h5>
             <p class="card-text mt-3"> {{item.campo}} </p>
             <p class="card-text">
-              <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date: 'HH:mm'}}</small>
+              <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date:
+                'HH:mm'}}</small>
             </p>
 
             <p class="card-text">
@@ -119,7 +272,7 @@
   </div>
 </div>
 
-<!-- Inicio do modal -->
+
 
 <div class="modal fade" id="NovaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
@@ -132,7 +285,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- corpo do modal -->
+
         <div class="form-group">
           <label for="titulo">Titulo</label>
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
@@ -152,7 +305,7 @@
           </select>
         </div>
 
-        <!-- /corpo do modal -->
+
       </div>
       <div class="modal-footer">
         <button type="button" class="text-white btn botao2" data-dismiss="modal">Cancelar</button>
@@ -160,4 +313,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

@@ -1,3 +1,26 @@
+a {
+    text-decoration: none;
+}
+
+.div-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.menu {
+    padding: 0 !important;
+    height: 100vh !important;
+}
+
+.container-fluid {
+    height: 100vh;
+}
+
+.bg-color {
+    background-color: #884890;
+}
+
 .corfundo{
     background-color: #72077f;
 }
@@ -14,4 +37,20 @@
 
 .fonte{
     color: #72077F;
+}
+
+.pl-50{
+    padding-left: 100px;
+}
+
+.mt-100 {
+    margin-top: 150px;
+}
+
+.text-light{
+    padding-top: 7px;
+}
+
+.teste {
+    flex-shrink: 1;
 }
