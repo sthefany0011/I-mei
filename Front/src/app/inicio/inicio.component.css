@@ -2,6 +2,17 @@ a {
     text-decoration: none;
 }
 
+.btn-publique {
+    display: flex;
+    flex-grow: 1;
+    height: 100px;
+    background-color: white !important;
+}
+
+.btn-publique:hover {
+    background-color: white !important;
+}
+
 .div-img {
     margin-left: auto;
     margin-right: auto;

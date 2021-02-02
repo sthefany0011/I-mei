@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #F2F2FB;">
   <div class="row d-flex">
-    <div class="col-md-2 menu">
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark flex-column">
+    <div class="col-md-2 menu" style="background-color: #884890;">
+      <nav class="navbar navbar-expand-lg navbar-light flex-column">
         <div class="row mt-4 mb-4">
           <div class="col d-flex justify-content-center">
             <img src="/assets/imei2.png" alt="Logo da empresa" style="width: 100px;" height="50px">
@@ -77,6 +77,10 @@
     </div>
     <div class="col-md-9">
       <div class="tab-content" id="v-pills-tabContent">
+        <app-menu></app-menu>
+        <div class="form-group">
+          <a class="btn bg-light btn-publique d-flex justify-content-start" data-toggle="modal" data-target="#NovaPostagem" href="">Publique algo</a>
+        </div>
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">AAA
         </div>
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -99,7 +103,7 @@
           </div>
         </div>
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <!-- <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-profile-tab"> -->
 
             <div class="card-columns">
               <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
@@ -118,7 +122,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
           <div class="card-columns" *ngFor='let tema of listaTemas'>
@@ -139,6 +143,47 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="NovaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="titulo">Titulo</label>
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+            placeholder="Digite o titulo">
+        </div>
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea [(ngModel)]='postagem.campo' class="form-control" name="texto" id="texto" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+
+          <label for="tema">Escolha um tema ou <strong><a data-dismiss="modal" class="fonte"
+                style="text-decoration: none" routerLink="/tema">cadastre um novo</a></strong></label>
+          <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+            <option value="">Escolha um tema</option>
+            <option *ngFor='let tema of listaTemas' value="{{tema.id}}"> {{tema.descricao}} </option>
+          </select>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="text-white btn botao2" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn botao text-white" data-dismiss="modal" (click)='publicar()'>Postar</button>
       </div>
     </div>
   </div>

@@ -13,3 +13,8 @@ a{
     cursor: pointer;
     text-decoration: none;
 }
+
+.fs-20 {
+    font-size: 30pt;
+    font-weight: bolder;
+}
