@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: #F2F2FB;">
+<div class="container-fluid">
   <!-- conteudo geral -->
   <div class="row d-flex content">
 
@@ -52,7 +52,7 @@
                 <div class="dropdown-divider mt-4"></div>
 
                 <li class="mt-4">
-                  <span class="text-light ml-5"> Publicações </span>
+                  <span class="text-light ml-4"> Publicações </span>
                 </li>
 
                 <li class="mt-4">
@@ -82,17 +82,22 @@
     </div>
     <!-- /menu -->
 
-    <div class="col-md-9 mt-3 mb-3">
-      <div class="tab-content" id="v-pills-tabContent">
+    <div class="col-md-7 mt-3 mb-3 content-post">
 
-        <app-menu></app-menu>
+      <div class="row">
+        <div class="col-md-12">
+          <app-menu></app-menu>
 
-        <!-- modal de postagem -->
-        <div class="form-group">
-          <a class="btn bg-light btn-publique d-flex justify-content-start" data-toggle="modal"
-            data-target="#NovaPostagem" href="">Publique algo</a>
+          <!-- modal de postagem -->
+          <div class="form-group">
+            <a class="btn bg-light btn-publique d-flex justify-content-start" data-toggle="modal"
+              data-target="#NovaPostagem" href="">Publique algo</a>
+          </div>
+          <!-- /modal de postagem -->
         </div>
-        <!-- /modal de postagem -->
+      </div>
+
+      <div class="tab-content" id="v-pills-tabContent">
 
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
@@ -100,16 +105,21 @@
 
         <!-- todas as postagem -->
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-          <div class="card mt-3 mb-3" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+          <div class="card mt-3 mb-3 pb-3" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
             <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <img class="rounded" style="width: 40px;" src="{{item.usuario.foto}}" alt="Foto de perfil">
+                <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
+              </div>
               <h5 class="card-title">{{item.titulo}}</h5>
               <p class="card-text">{{item.campo}}}</p>
               <p class="card-text"><small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost |
                   date: 'HH:mm'}}</small></p>
             </div>
 
-            <div>
-              <img class="card-img-top" src="{{item.linkImagem}}" alt="Imagem de capa do card">
+            <div class="align-self-center">
+              <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
+                alt="Imagem de capa do card">
             </div>
 
           </div>
@@ -181,7 +191,7 @@
       </div>
     </div>
   </div>
-    <!-- /conteudo geral -->
+  <!-- /conteudo geral -->
 </div>
 
 <!-- modal postagem -->
