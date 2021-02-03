@@ -1,3 +1,7 @@
+*{
+    font: roboto;
+}
+
 a {
     text-decoration: none;
 }
@@ -14,17 +18,37 @@ a {
 }
 
 .bg-modal {
-    background-color: rgba(164, 108, 171, 0.30)
+    background-color: rgba(164, 108, 171, 0.90)
+}
+
+.fixed{
+    position: fixed;
 }
 
 .btn-publique:hover {
     background-color: white !important;
 }
 
+.cor-roxa{
+color: #72077f;
+}
+
+
+
 .div-img {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+}
+
+.div-img-peq {
+    
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
 }
 
 .menu {
@@ -46,11 +70,17 @@ a {
 .botao{
 
     background-color: #72077f;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
 }
 .botao2{
 
 
     background-color: #E5982E;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
 }
 
 .fonte{
@@ -75,7 +105,7 @@ a {
 
 .img-postagem {
     width: 100% !important;
-    height: 500px !important;
+    height: 400px !important;
     object-fit: cover !important;
 }
 

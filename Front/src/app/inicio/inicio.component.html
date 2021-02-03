@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <!-- conteudo geral -->
-  <div class="row d-flex content">
+  <div class="row d-flex content ">
 
     <!-- menu -->
     <div class="col-md-2 menu" style="background-color: #884890;">
-      <nav class="navbar navbar-expand-lg navbar-light flex-column" style="background-color: #884890;">
+      <nav class="navbar navbar-expand-lg navbar-light flex-column fixed" style="background-color: #884890;">
 
         <!-- img-perfil -->
         <div class="row mt-4 mb-4">
@@ -23,7 +23,7 @@
 
           <div class="row d-flex align-items-center justify-content-center flex-column">
             <div class="col-md-12">
-              <img class="rounded div-img" style="width: 80px;" src="{{foto}}" alt="Foto de perfil">
+              <img class="rounded div-img" src="{{foto}}" alt="Foto de perfil">
 
             </div>
 
@@ -90,8 +90,8 @@
 
           <!-- modal de postagem -->
           <div class="form-group">
-            <a class="btn bg-light btn-publique d-flex justify-content-start" data-toggle="modal"
-              data-target="#NovaPostagem" href="">Publique algo</a>
+            <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;" data-toggle="modal"
+              data-target="#NovaPostagem" href="">Publique algo</a> 
           </div>
           <!-- /modal de postagem -->
         </div>
@@ -103,12 +103,12 @@
 
         </div>
 
-        <!-- todas as postagem -->
+        <!--  as postagem -->
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <div class="card mt-3 mb-3 pb-3" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-                <img class="rounded" style="width: 40px;" src="{{item.usuario.foto}}" alt="Foto de perfil">
+                <img class="rounded div-img-peq" src="{{item.usuario.foto}}" alt="Foto de perfil">
                 <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
               </div>
               <h5 class="card-title">{{item.titulo}}</h5>
@@ -195,47 +195,52 @@
 </div>
 
 <!-- modal postagem -->
-<div class="modal fade" id="NovaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+<div class="modal fade" id="NovaPostagem"  tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content bg-modal">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+    <div class="modal-content bg-modal" style="border-radius: 10px;">
+      <!-- <div class="modal-header"> -->
+       
+      <!-- </div> -->
+      <div class="modal-body">
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
+        <h5 class="modal-title text-center text-white" id="TituloModalCentralizado">Nova Postagem</h5>
 
         <div class="form-group">
-          <label for="titulo">Titulo</label>
-          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+          <label class="text-white" for="titulo">Titulo</label>
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control cor-roxa" style="border-radius: 10px;" id="titulo"
             placeholder="Digite o titulo">
         </div>
 
         <div class="form-group">
-          <label for="texto">Texto</label>
-          <textarea [(ngModel)]='postagem.campo' class="form-control" name="texto" id="texto" rows="5"></textarea>
+          <label class="text-white" for="texto">Texto</label>
+          <textarea [(ngModel)]='postagem.campo' style="border-radius: 10px;" class="form-control" name="texto" id="texto" rows="5"></textarea>
         </div>
 
         <div class="form-group">
-          <label for="titulo">Link da imagem</label>
-          <input [(ngModel)]='postagem.linkImagem' type="text" class="form-control" id="linkImagem"
+          <label class="text-white" for="titulo">Link da imagem</label>
+          <input [(ngModel)]='postagem.linkImagem' type="text" style="border-radius: 10px;" class="form-control cor-roxa" id="linkImagem"
             placeholder="Insira o link da imagem para postar">
         </div>
 
-        <label for="tema">Escolha um tema ou <strong><a data-dismiss="modal" class="fonte" style="text-decoration: none"
+        <label class="text-white" for="tema">Escolha um tema ou <strong><a data-dismiss="modal" class="fonte" style="text-decoration: none"
               routerLink="/tema">cadastre um novo</a></strong></label>
-        <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+        <select class="form-control" style="border-radius: 10px;" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
           <option value="">Escolha um tema</option>
           <option *ngFor='let tema of listaTemas' value="{{tema.id}}"> {{tema.descricao}} </option>
         </select>
+        <div class="d-flex justify-content-center">
+        <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn botao2 text-white ml-3 mt-3" data-dismiss="modal" (click)='publicar()'>Postar</button>
+        </div>
       </div>
 
-      <div class="modal-footer">
-        <button type="button" class="text-white btn botao2" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn botao text-white" data-dismiss="modal" (click)='publicar()'>Postar</button>
-      </div>
+     
+        
+      
 
     </div>
   </div>
