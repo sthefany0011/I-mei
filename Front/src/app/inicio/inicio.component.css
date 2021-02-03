@@ -2,11 +2,19 @@ a {
     text-decoration: none;
 }
 
+.content {
+    height: 100vh !important;
+}
+
 .btn-publique {
     display: flex;
     flex-grow: 1;
     height: 100px;
     background-color: white !important;
+}
+
+.bg-modal {
+    background-color: rgba(164, 108, 171, 0.30)
 }
 
 .btn-publique:hover {
@@ -21,11 +29,10 @@ a {
 
 .menu {
     padding: 0 !important;
-    height: 100vh !important;
 }
 
 .container-fluid {
-    height: 100vh;
+    height: 100vh !important;
 }
 
 .bg-color {
@@ -64,4 +71,21 @@ a {
 
 .teste {
     flex-shrink: 1;
+}
+
+@media (max-width: 600px) {
+    .container-fluid {
+        height: 100px !important;
+    }
+
+    .menu {
+        height: 100px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn-sair {
+        margin-top: 0;
+        padding-bottom: 10px;
+    }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
@@ -15,6 +15,14 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+
+  nome = environment.nome
+  foto = environment.foto
+  token = environment.token
+  id = environment.id
+
+  confirmarSenha: string
+  tipoP: string
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
@@ -35,19 +43,23 @@ export class InicioComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authService: AuthService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
 
-    // if (environment.token == '') {
-    //   alert('sua sessão expirou, faça login novamente.')
-    //   this.router.navigate(['/login'])
-    // }
+    if (environment.token == '') {
+      // alert('sua sessão expirou, faça login novamente.')
+      this.router.navigate(['/login'])
+    }
 
     this.getAllTemas()
     this.getAllPostagens()
+
+    // this.idUser = this.route.snapshot.params['id']
+    this.findByIdUserEdit(this.idUser)
   }
 
   getAllTemas() {
@@ -111,4 +123,41 @@ export class InicioComponent implements OnInit {
       })
     }
   }
+
+
+  // User edit
+  confirmSenha(event: any){
+    this.confirmarSenha = event.target.value
+  }
+
+  tipoPessoa(event: any){
+    this.tipoP = event.target.value
+  }
+
+  atualizar(){
+    this.user.pessoa = this.tipoP
+    this.user.tipo = 'normal'
+
+    if(this.user.senha != this.confirmarSenha){
+      this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')
+    }else{
+      this.authService.atualizar(this.user).subscribe((resp: User) =>{
+        this.user = resp
+        this.router.navigate(['/inicio'])
+        this.alertas.showAlertSuccess('Usuário atualizado com sucesso, faça login novamente!')
+        environment.foto = ''
+        environment.nome = ''
+        environment.token = ''
+        environment.id = 0
+        this.router.navigate(['/login'])
+      })
+    }
+  }
+
+  findByIdUserEdit(id: number){
+    this.authService.getByIdUser(id).subscribe((resp: User)=>{
+      this.user = resp
+    })
+  }
+
 }
