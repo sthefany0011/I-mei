@@ -144,8 +144,40 @@
         </div>-->
         <!-- /todas as postagem -->
 
+     <!-- copia -->
         <!-- minhas postagem -->
+
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <div class="card mt-3 mb-3 pb-3" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <img class="rounded" style="width: 40px;" src="{{foto}}" alt="Foto de perfil">
+                <span class="text-center ml-3 fs-20">{{nome}}</span>
+              </div>
+              <h5 class="card-title">{{item.titulo}}</h5>
+              <p class="card-text">{{item.campo}}</p>
+              <p class="card-text">
+                <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost |
+                  date: 'HH:mm'}}</small>
+              </p>
+            </div>
+
+            <div class="align-self-center">
+              <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
+                alt="Imagem de capa do card">
+            </div> 
+
+            <hr>
+
+            <div class="d-flex align-items-center justify-content-center">
+              <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+              <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
           <div class="card-columns">
             <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
               <div class="card-body">
@@ -163,11 +195,35 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- /minhas postagem -->
+        <!-- copia -->
 
+        <!-- copia -->
         <!-- por tema -->
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" *ngFor='let tema of listaTemas'>
+          <div class="card mt-3 mb-3 pb-3" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <img class="rounded" style="width: 40px;" src="{{item.usuario.foto}}" alt="Foto de perfil">
+                <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
+              </div>
+              <h5 class="card-title">{{item.titulo}}</h5>
+              <p class="card-text">{{item.campo}}</p>
+              <p class="card-text">
+                <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost |
+                  date: 'HH:mm'}}</small>
+              </p>
+            </div>
+
+            <div class="align-self-center">
+              <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
+                alt="Imagem de capa do card">
+            </div> 
+          </div>
+        </div>
+
+        <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
           <div class="card-columns" *ngFor='let tema of listaTemas'>
             <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
               <div class="card-body">
@@ -185,8 +241,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- /por tema -->
+        <!-- copia -->
+
 
       </div>
     </div>
