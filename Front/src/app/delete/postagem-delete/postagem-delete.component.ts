@@ -13,6 +13,11 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PostagemDeleteComponent implements OnInit {
 
+  nome = environment.nome
+  foto = environment.foto
+  token = environment.token
+  id = environment.id
+
   postagem: Postagem = new Postagem()
   idPost: number
 

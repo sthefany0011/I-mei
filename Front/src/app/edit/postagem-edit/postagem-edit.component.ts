@@ -15,6 +15,11 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PostagemEditComponent implements OnInit {
 
+  nome = environment.nome
+  foto = environment.foto
+  token = environment.token
+  id = environment.id
+
   postagem: Postagem = new Postagem()
   tema: Tema = new Tema()
   listaTemas: Tema[]
