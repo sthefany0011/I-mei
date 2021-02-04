@@ -90,8 +90,8 @@
 
           <!-- modal de postagem -->
           <div class="form-group">
-            <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;" data-toggle="modal"
-              data-target="#NovaPostagem" href="">Publique algo</a> 
+            <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;"
+              data-toggle="modal" data-target="#NovaPostagem" href="">Publique algo</a>
           </div>
           <!-- /modal de postagem -->
         </div>
@@ -103,7 +103,7 @@
 
         </div>
 
-        <!--  as postagem -->
+        <!-- Todas as postagens -->
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <div class="card mt-3 mb-3 pb-3" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
             <div class="card-body">
@@ -112,7 +112,7 @@
                 <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
               </div>
               <h5 class="card-title">{{item.titulo}}</h5>
-              <p class="card-text">{{item.campo}}}</p>
+              <p class="card-text">{{item.campo}}</p>
               <p class="card-text"><small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost |
                   date: 'HH:mm'}}</small></p>
             </div>
@@ -121,10 +121,10 @@
               <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
                 alt="Imagem de capa do card">
             </div>
-
           </div>
+        </div>
 
-          <!-- <div class="card-columns">
+        <!-- <div class="card-columns">
             <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
               <div class="card-body">
                 <h5 class="card-title m-0"> {{item.titulo}} </h5>
@@ -140,8 +140,8 @@
                 </p>
               </div>
             </div>
-          </div> -->
-        </div>
+          </div> 
+        </div>-->
         <!-- /todas as postagem -->
 
         <!-- minhas postagem -->
@@ -195,15 +195,15 @@
 </div>
 
 <!-- modal postagem -->
-<div class="modal fade" id="NovaPostagem"  tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+<div class="modal fade" id="NovaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-modal" style="border-radius: 10px;">
       <!-- <div class="modal-header"> -->
-       
+
       <!-- </div> -->
       <div class="modal-body">
-        
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -211,36 +211,39 @@
 
         <div class="form-group">
           <label class="text-white" for="titulo">Titulo</label>
-          <input [(ngModel)]='postagem.titulo' type="text" class="form-control cor-roxa" style="border-radius: 10px;" id="titulo"
-            placeholder="Digite o titulo">
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control cor-roxa" style="border-radius: 10px;"
+            id="titulo" placeholder="Digite o titulo">
         </div>
 
         <div class="form-group">
           <label class="text-white" for="texto">Texto</label>
-          <textarea [(ngModel)]='postagem.campo' style="border-radius: 10px;" class="form-control" name="texto" id="texto" rows="5"></textarea>
+          <textarea [(ngModel)]='postagem.campo' style="border-radius: 10px;" class="form-control" name="texto"
+            id="texto" rows="5"></textarea>
         </div>
 
         <div class="form-group">
           <label class="text-white" for="titulo">Link da imagem</label>
-          <input [(ngModel)]='postagem.linkImagem' type="text" style="border-radius: 10px;" class="form-control cor-roxa" id="linkImagem"
-            placeholder="Insira o link da imagem para postar">
+          <input [(ngModel)]='postagem.linkImagem' type="text" style="border-radius: 10px;"
+            class="form-control cor-roxa" id="linkImagem" placeholder="Insira o link da imagem para postar">
         </div>
 
-        <label class="text-white" for="tema">Escolha um tema ou <strong><a data-dismiss="modal" class="fonte" style="text-decoration: none"
-              routerLink="/tema">cadastre um novo</a></strong></label>
-        <select class="form-control" style="border-radius: 10px;" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+        <label class="text-white" for="tema">Escolha um tema ou <strong><a data-dismiss="modal" class="fonte"
+              style="text-decoration: none" routerLink="/tema">cadastre um novo</a></strong></label>
+        <select class="form-control" style="border-radius: 10px;" name="tema" id="tema" [(ngModel)]='idTema'
+          (change)='findByIdTema()'>
           <option value="">Escolha um tema</option>
           <option *ngFor='let tema of listaTemas' value="{{tema.id}}"> {{tema.descricao}} </option>
         </select>
         <div class="d-flex justify-content-center">
-        <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn botao2 text-white ml-3 mt-3" data-dismiss="modal" (click)='publicar()'>Postar</button>
+          <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn botao2 text-white ml-3 mt-3" data-dismiss="modal"
+            (click)='publicar()'>Postar</button>
         </div>
       </div>
 
-     
-        
-      
+
+
+
 
     </div>
   </div>
