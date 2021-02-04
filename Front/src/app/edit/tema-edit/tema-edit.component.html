@@ -1,21 +1,84 @@
-<div class="container mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center text-secondary">Atualizar Tema</h1>
+<div class="container-fluid">
+    <div class="row content">
+
+        <!-- menu -->
+        <div class="col-md-2 menu d-flex justify-content-center" style="background-color: #884890;">
+            <nav class="navbar navbar-expand-lg navbar-light flex-column fixed" style="background-color: #884890;">
+
+                <!-- img-perfil -->
+                <div class="row mt-4 mb-4">
+                    <div class="col d-flex justify-content-center">
+                        <img src="/assets/imei2.png" alt="Logo da empresa" style="width: 100px;" height="50px">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
+                        aria-expanded="false" aria-label="Alterna navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- /img-perfil -->
+
+                <!-- itens do menu -->
+                <div class="collapse navbar-collapse flex-column" id="conteudoNavbarSuportado">
+
+                    <div class="row d-flex align-items-center justify-content-center flex-column">
+                        <div class="col-md-12">
+                            <img class="rounded div-img" src="{{foto}}" alt="Foto de perfil">
+
+                        </div>
+
+                        <!-- <div class="col-md-8 pl-5 bg-success"><span class="text-white">Maria José da Silva pinheiros</span></div> -->
+                    </div>
+
+                    <div class="row mt-2 d-flex flex-column justify-content-center">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <span class="text-white text-center">{{nome}}</span>
+                                </div>
+                            </div>
+
+                            <ul class="navbar-nav mr-auto nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+
+                                <div class="dropdown-divider mt-4"></div>
+
+                                <li class="nav-item active mt-4">
+                                    <a class="text-white" routerLink='/inicio'>Início</a>
+                                </li>
+
+                                <a class="mt-100 ml-5 text-light btn-sair" href="">Sair</a>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- itens do menu -->
+
+            </nav>
         </div>
-    </div>
+        <!-- /menu -->
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-
-            <div class="form-group">
-                <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" id="descricao" [(ngModel)]='tema.descricao'>
+        <div class="col-md-7 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center text-secondary">Atualizar Tema</h1>
+                </div>
             </div>
 
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-danger mr-3" routerLink='/tema'>Cancelar</button>
-                <button class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" id="descricao" [(ngModel)]='tema.descricao'>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-danger mr-3" routerLink='/tema'>Cancelar</button>
+                        <button class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

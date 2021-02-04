@@ -3,7 +3,7 @@
   <div class="row d-flex content ">
 
     <!-- menu -->
-    <div class="col-md-2 menu" style="background-color: #884890;">
+    <div class="col-md-2 menu d-flex justify-content-center" style="background-color: #884890;">
       <nav class="navbar navbar-expand-lg navbar-light flex-column fixed" style="background-color: #884890;">
 
         <!-- img-perfil -->
@@ -197,26 +197,29 @@
 
         <!-- copia -->
         <!-- por tema -->
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" *ngFor='let tema of listaTemas'>
-          <div class="card mt-3 mb-3 pb-3" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <img class="rounded" style="width: 40px;" src="{{item.usuario.foto}}" alt="Foto de perfil">
-                <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <div *ngFor='let tema of listaTemas'>
+            <div class="card mt-3 mb-3 pb-3" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <img class="rounded" style="width: 40px;" src="{{item.usuario.foto}}" alt="Foto de perfil">
+                  <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
+                </div>
+                <h5 class="card-title">{{item.titulo}}</h5>
+                <p class="card-text">Tema: {{tema.descricao}}</p>
+                <p class="card-text">{{item.campo}}</p>
+                <p class="card-text">
+                  <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost |
+                    date: 'HH:mm'}}</small>
+                </p>
               </div>
-              <h5 class="card-title">{{item.titulo}}</h5>
-              <p class="card-text">{{item.campo}}</p>
-              <p class="card-text">
-                <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost |
-                  date: 'HH:mm'}}</small>
-              </p>
-            </div>
 
-            <div class="align-self-center">
-              <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
-                alt="Imagem de capa do card">
-            </div> 
-          </div>
+              <div class="align-self-center">
+                <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
+                  alt="Imagem de capa do card">
+              </div> 
+            </div>
+            </div>
         </div>
 
         <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">

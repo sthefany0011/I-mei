@@ -13,6 +13,7 @@ export class CadastroComponent implements OnInit {
 
   user: User= new User
   confirmarSenha: string
+  cod: string
   tipoP: string
 
   constructor(
@@ -29,13 +30,22 @@ export class CadastroComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
+  codAdmin(event: any) {
+    this.cod = event.target.value
+    if(this.cod == 'admin123') {
+      this.cod = 'adm'
+    } else {
+      this.cod = 'normal'
+    }
+  }
+
   tipoPessoa(event: any){
     this.tipoP = event.target.value
   }
 
   cadastrar(){
     this.user.pessoa = this.tipoP
-    this.user.tipo = 'normal'
+    this.user.tipo = this.cod
 
     if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')

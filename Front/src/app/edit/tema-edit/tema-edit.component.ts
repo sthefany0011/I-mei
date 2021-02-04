@@ -12,6 +12,11 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaEditComponent implements OnInit {
 
+  nome = environment.nome
+  foto = environment.foto
+  token = environment.token
+  id = environment.id
+
   tema: Tema = new Tema()
 
   constructor(
@@ -23,7 +28,7 @@ export class TemaEditComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token == '') {
-      this.router.navigate(['entrar'])
+      this.router.navigate(['/login'])
     }
 
     let id = this.route.snapshot.params['id'] // nome do parâmetro passado na rota!
@@ -40,7 +45,7 @@ export class TemaEditComponent implements OnInit {
     this.temaService.putTema(this.tema).subscribe((resp: Tema) =>{
       this.tema = resp
       this.alertas.showAlertSuccess('Tema atualizado com sucesso!')
-      this.router.navigate(['/tema'])
+      this.router.navigate(['/inicio'])
     })
   }
 

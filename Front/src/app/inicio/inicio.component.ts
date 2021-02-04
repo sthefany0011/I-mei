@@ -65,6 +65,7 @@ export class InicioComponent implements OnInit {
   getAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
+      console.log(this.listaTemas)
     })
   }
 
@@ -77,7 +78,7 @@ export class InicioComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
-      console.log(JSON.stringify(resp))
+      // console.log(JSON.stringify(resp))
     })
   }
 

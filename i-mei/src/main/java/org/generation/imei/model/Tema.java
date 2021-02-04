@@ -34,7 +34,7 @@ public class Tema {
 	private String descricao;
 
 	// Relacionamento entre tabelas (Tema 1 --- N Postagem)
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 	

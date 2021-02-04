@@ -12,6 +12,11 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaDeleteComponent implements OnInit {
 
+  nome = environment.nome
+  foto = environment.foto
+  token = environment.token
+  id = environment.id
+
   tema: Tema = new Tema()
   idTema: number
 
@@ -24,7 +29,7 @@ export class TemaDeleteComponent implements OnInit {
 
   ngOnInit(){
     if(environment.token == '') {
-      this.router.navigate(['entrar'])
+      this.router.navigate(['/inico'])
     }
 
     this.idTema = this.route.snapshot.params['id']

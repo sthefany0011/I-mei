@@ -1,10 +1,63 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class= "col-md-12">
+    <div class="row content">
+        <!-- menu --> 
+        <div class="col-md-2 menu d-flex justify-content-center" style="background-color: #884890;">
+            <nav class="navbar navbar-expand-lg navbar-light flex-column fixed" style="background-color: #884890;">
 
-            <a routerLink='/inicio' class="text-left">
-            <i class="fa fa-angle-double-left" aria-hidden="true"></i> inicio
-            </a>
+                <!-- img-perfil -->
+                <div class="row mt-4 mb-4">
+                    <div class="col d-flex justify-content-center">
+                        <img src="/assets/imei2.png" alt="Logo da empresa" style="width: 100px;" height="50px">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
+                        aria-expanded="false" aria-label="Alterna navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- /img-perfil -->
+
+                <!-- itens do menu -->
+                <div class="collapse navbar-collapse flex-column" id="conteudoNavbarSuportado">
+
+                    <div class="row d-flex align-items-center justify-content-center flex-column">
+                        <div class="col-md-12">
+                            <img class="rounded div-img" src="{{foto}}" alt="Foto de perfil">
+
+                        </div>
+
+                        <!-- <div class="col-md-8 pl-5 bg-success"><span class="text-white">Maria José da Silva pinheiros</span></div> -->
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <span class="text-white text-center">{{nome}}</span>
+                                </div>
+                            </div>
+
+                            <ul class="navbar-nav mr-auto nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+
+                                <div class="dropdown-divider mt-4"></div>
+
+                                <li class="nav-item active mt-4">
+                                    <a class="text-white" routerLink='/inicio'>Início</a>
+                                </li>
+
+                                <a class="mt-100 ml-5 text-light btn-sair" href="">Sair</a>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- itens do menu -->
+
+            </nav>
+        </div>
+        <!-- /menu -->
+        <div class="col-md-7 d-flex flex-column justify-content-center">
 
             <h1 class="fs-54 text-center">Temas</h1>
             <h5 class="fs-18 text-center"> Veja aqui os temas disponíveis ou cadastre um novo</h5>
@@ -12,48 +65,50 @@
             <div class="row d-flex justify-content-center mt-4 mb-5">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input name="descricao" [(ngModel)]='tema.descricao' type="text" class="form-control" id="descricao" placeholder="Digite um novo tema">
+                        <input name="descricao" [(ngModel)]='tema.descricao' type="text" class="form-control"
+                            id="descricao" placeholder="Digite um novo tema">
                     </div>
                     <div class="d-flex justify-content-center">
                         <button class="btn botao text-white" (click)='cadastrar()'>Cadastrar</button>
                     </div>
                 </div>
             </div>
-        </div>
 
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h2 class="text-center">Todos os temas</h2>
+                </div>
+            </div>
+            <div class="row mt-3 mb-5 d-flex justify-content-center">
+                <div class="col-md-6">
+        
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col" class="text-right">Modificações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let tema of listaTemas'>
+                                <th> {{tema.id}} </th>
+                                <td> {{tema.descricao}} </td>
+                                <td class="d-flex justify-content-end">
+                                    <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
+                                    <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+        
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
 
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-md-12">
-            <h2 class="tex-center">Todos os temas</h2>
-        </div>
-    </div>
-    <div class="row mt-3 mb-5 d-flex justify-content-center">
-        <div class="col-md-6">
-
-            <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col" class="text-right">Modificações</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor='let tema of listaTemas'>
-                    <th> {{tema.id}} </th>
-                    <td> {{tema.descricao}} </td>
-                    <td class="d-flex justify-content-end">
-                      <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
-                      <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-        </div>
-    </div>
+    
 </div>
