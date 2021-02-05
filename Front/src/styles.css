@@ -11,3 +11,19 @@ html{
 .fs-18{
     font-size: 18pt;
 }
+
+.botao{
+
+    background-color: #72077f !important;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
+}
+.botao2{
+
+
+    background-color: #E5982E !important;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
+}

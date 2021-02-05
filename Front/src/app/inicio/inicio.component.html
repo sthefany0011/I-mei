@@ -42,8 +42,9 @@
                 aria-orientation="vertical">
 
                 <!-- modal do editar perfil -->
-                <li class="nav-item active mt-4">
-                  <a class="active ml-5 text-light" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                <li class="nav-item active mt-4 d-flex align-items-center">
+                  <img src="/assets/lapis.png" width="13px" height="15px">
+                  <a class="active text-light ml-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
                     role="tab" aria-controls="v-pills-home" aria-selected="true" data-toggle="modal"
                     data-target="#EditarPerfil">Editar perfil</a>
                 </li>
@@ -51,26 +52,29 @@
 
                 <div class="dropdown-divider mt-4"></div>
 
-                <li class="mt-4">
-                  <span class="text-light ml-4"> Publicações </span>
+                <li class="mt-4 d-flex align-self-center">
+                  <span class="text-light "> Publicações </span>
                 </li>
 
-                <li class="mt-4">
-                  <a class="ml-5 text-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                <li class="mt-4 d-flex align-items-center">
+                  <img src="/assets/todas.png" width="13px" height="15px">
+                  <a class="ml-2 text-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
                     role="tab" aria-controls="v-pills-profile" aria-selected="false">Todas</a>
                 </li>
-                <li class="mt-2">
-                  <a (click)='findByIdUser()' class="ml-5 text-light" id="v-pills-messages-tab" data-toggle="pill"
+                <li class="mt-2 d-flex align-items-center">
+                  <img src="assets/perfil.png" width="13px" height="15px">
+                  <a (click)='findByIdUser()' class="ml-2 text-light" id="v-pills-messages-tab" data-toggle="pill"
                     href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
                     aria-selected="false">Minhas</a>
                 </li>
 
-                <li class="nav-item mt-2">
-                  <a class="ml-5 text-light" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                <li class="mt-2 d-flex align-items-center">
+                  <img src="/assets/tema.png" width="13px" height="15px">
+                  <a class="ml-2 text-light" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
                     role="tab" aria-controls="v-pills-settings" aria-selected="false">Por tema</a>
                 </li>
 
-                <a class="mt-100 ml-5 text-light btn-sair" href="">Sair</a>
+                <a class="mt-100 text-center text-light btn-sair" routerLink = '/login'>Sair</a>
               </ul>
             </div>
           </div>
@@ -305,61 +309,65 @@
     </div>
   </div>
 </div>
-<!-- modal postagem -->
+<!-- fim postagem -->
+
+
 
 <!-- modal do editar perfil -->
 <div class="modal fade" id="EditarPerfil" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered" style="border-radius: 10px;"role="document">
     <div class="modal-content bg-modal">
 
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Editar perfil</h5>
+      
+      
+
+      <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-
-      <div class="modal-body">
+        <h5 class="modal-title text-center text-white mb-3" id="TituloModalCentralizado">Editar perfil</h5>
+          
+      
 
         <div class="form-group">
-          <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+          <input [(ngModel)]='user.nome' class="form-control" type="text" style="border-radius: 10px;" name="nome" id="nome" placeholder="Seu nome">
         </div>
 
         <div class="form-group">
-          <input [(ngModel)]='user.email' class="form-control" type="email" name="email" id="email"
+          <input [(ngModel)]='user.email' class="form-control" style="border-radius: 10px;" type="email" name="email" id="email"
             placeholder="Seu Email">
         </div>
 
         <div class="form-group">
-          <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
+          <input [(ngModel)]='user.foto' class="form-control" style="border-radius: 10px;" type="text" name="foto" id="foto"
             placeholder="Foto de Perfil">
         </div>
 
         <div class="form-group">
-          <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
+          <input (input)='confirmSenha($event)' class="form-control" style="border-radius: 10px;" type="password" name="senha" id="senha"
             placeholder="Sua Senha">
         </div>
 
 
         <div class="form-group">
-          <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+          <input [(ngModel)]='user.senha' class="form-control" style="border-radius: 10px;" type="password" name="confirmSenha" id="confirmSenha"
             placeholder="Confirme sua Senha">
         </div>
 
-        <div class="form-group">
-          <select class="form-control" name="pessoa" id="pessoa" (change)='tipoPessoa($event)'>
+        <!-- <div class="form-group">
+          <select class="form-control" style="border-radius: 10px;" name="pessoa" id="pessoa" (change)='tipoPessoa($event)'>
             <option>Selecione um tipo de usuário:</option>
             <option value="pj">Pessoa Jurídica</option>
             <option value="pf">Pessoa Física</option>
           </select>
-        </div>
-
+        </div> -->
+        <div class="d-flex justify-content-center">
+        <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn botao2 text-white ml-3 mt-3" (click)='atualizar()'>Atualizar</button>
       </div>
-      <div class="modal-footer d-flex justify-content-center mt-3">
-        <button type="submit" class="btn btn botao2 mr-4" routerLink='/inicio'>Cancelar</button>
-        <button type="submit" class="btn btn botao" (click)='atualizar()'>Atualizar</button>
       </div>
+      
     </div>
   </div>
 </div>

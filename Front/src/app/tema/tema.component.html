@@ -40,13 +40,14 @@
                             <ul class="navbar-nav mr-auto nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                 aria-orientation="vertical">
 
-                                <div class="dropdown-divider mt-4"></div>
+                           
 
                                 <li class="nav-item active mt-4">
-                                    <a class="text-white" routerLink='/inicio'>Início</a>
+                                    <img src="/assets/home.png" width="13px" height="15px">
+                                    <a class="text-white text-center ml-2" routerLink='/inicio'>Início</a>
                                 </li>
 
-                                <a class="mt-100 ml-5 text-light btn-sair" href="">Sair</a>
+                                <a class="mt-100 text-center text-light btn-sair" routerLink = '/login'>Sair</a>
                             </ul>
                         </div>
                     </div>
@@ -95,8 +96,8 @@
                                 <th> {{tema.id}} </th>
                                 <td> {{tema.descricao}} </td>
                                 <td class="d-flex justify-content-end">
-                                    <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
-                                    <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
+                                    <button class="text-white btn botao mt-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
+                                    <button class="btn botao2 text-white ml-3 mt-3" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
                                 </td>
                             </tr>
                         </tbody>

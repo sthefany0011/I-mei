@@ -30,3 +30,23 @@ a {
 .container-fluid {
     height: 100vh !important;
 }
+
+.mt-100 {
+    margin-top: 250px;
+}
+
+.botao{
+
+    background-color: #72077f;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
+}
+.botao2{
+
+
+    background-color: #E5982E;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
+}

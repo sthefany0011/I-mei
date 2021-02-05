@@ -28,11 +28,27 @@ a {
 }
 
 .mt-100 {
-    margin-top: 150px;
+    margin-top: 250px;
 }
 
 .fixed{
     position: fixed;
+}
+
+.botao{
+
+    background-color: #72077f;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
+}
+.botao2{
+
+
+    background-color: #E5982E;
+    width: 90px !important;
+    height: 40px !important;
+    border-radius: 10px;
 }
 
 @media (max-width: 600px) {
