@@ -5,7 +5,7 @@ export class UserLogin{
     public email: string
     public senha: string
     public token: string
-    public pessoa: string
+    public telefone: string
     public foto: string
     public tipo: string
         

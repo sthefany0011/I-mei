@@ -43,10 +43,10 @@
 
                 <!-- modal do editar perfil -->
                 <li class="nav-item active mt-4 d-flex align-items-center">
-                  <img src="/assets/lapis.png" width="13px" height="15px">
                   <a class="active text-light ml-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
                     role="tab" aria-controls="v-pills-home" aria-selected="true" data-toggle="modal"
-                    data-target="#EditarPerfil">Editar perfil</a>
+                    data-target="#EditarPerfil"> <i class="fa fa-pencil" aria-hidden="true"></i> &nbsp; Editar
+                    perfil</a>
                 </li>
                 <!-- modal do editar perfil -->
 
@@ -57,24 +57,23 @@
                 </li>
 
                 <li class="mt-4 d-flex align-items-center">
-                  <img src="/assets/todas.png" width="13px" height="15px">
                   <a class="ml-2 text-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
-                    role="tab" aria-controls="v-pills-profile" aria-selected="false">Todas</a>
+                    role="tab" aria-controls="v-pills-profile" aria-selected="false"> <i class="fa fa-bars text-light"
+                      aria-hidden="true"></i> &nbsp; Todas</a>
                 </li>
                 <li class="mt-2 d-flex align-items-center">
-                  <img src="assets/perfil.png" width="13px" height="15px">
                   <a (click)='findByIdUser()' class="ml-2 text-light" id="v-pills-messages-tab" data-toggle="pill"
-                    href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                    aria-selected="false">Minhas</a>
+                    href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"> <i
+                      class="fa fa-user" aria-hidden="true"></i> &nbsp; Minhas</a>
                 </li>
 
                 <li class="mt-2 d-flex align-items-center">
-                  <img src="/assets/tema.png" width="13px" height="15px">
                   <a class="ml-2 text-light" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
-                    role="tab" aria-controls="v-pills-settings" aria-selected="false">Por tema</a>
+                    role="tab" aria-controls="v-pills-settings" aria-selected="false"> <i class="fa fa-clipboard"
+                      aria-hidden="true"></i> &nbsp; Por tema</a>
                 </li>
 
-                <a class="mt-100 text-center text-light btn-sair" routerLink = '/login'>Sair</a>
+                <a class="mt-100 text-center text-light btn-sair" routerLink='/login'>Sair</a>
               </ul>
             </div>
           </div>
@@ -87,29 +86,52 @@
     <!-- /menu -->
 
     <div class="col-md-7 mt-3 mb-3 content-post">
-
-      <div class="row">
-        <div class="col-md-12">
-          <app-menu></app-menu>
-
-          <!-- modal de postagem -->
-          <div class="form-group">
-            <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;"
-              data-toggle="modal" data-target="#NovaPostagem" href="">Publique algo</a>
-          </div>
-          <!-- /modal de postagem -->
-        </div>
-      </div>
-
       <div class="tab-content" id="v-pills-tabContent">
-        
         <!-- Todas as postagens -->
-        <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel"
+          aria-labelledby="v-pills-profile-tab">
+
+          <div class="row d-flex justify_content-center justify-content-between mb-5 pl-3 pr-3">
+            <span class="fs-20">Olá, Bem vinde</span>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="titulo"
+                  placeholder="Digite um titulo de postagem para pesquisar" [(ngModel)]="tituloPost"
+                  (keyup)='findByTituloPostagem()'>
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <i class="fa fa-envelope fs-20 fonte" aria-hidden="true"></i>
+              <i class="fa fa-bell fs-20 ml-5 fonte" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- modal de postagem -->
+              <div class="form-group">
+                <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;"
+                  data-toggle="modal" data-target="#NovaPostagem" href="">Publique algo</a>
+              </div>
+              <!-- /modal de postagem -->
+            </div>
+          </div>
+
           <div class="card mt-3 mb-3 pb-3" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
             <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <img class="rounded div-img-peq" src="{{item.usuario.foto}}" alt="Foto de perfil">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <img class="rounded div-img-peq" src="{{item.usuario.foto}}" alt="Foto de perfil">
                 <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
+                </div>
+
+                <div>
+                  <a href="{{whats+item.usuario.telefone}}" target="_blank">
+                    <i class="fa fa-whatsapp fs-20 fonte" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
               <h5 class="card-title">{{item.titulo}}</h5>
               <p class="card-text">{{item.campo}}</p>
@@ -123,35 +145,34 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="card-columns">
-            <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
-              <div class="card-body">
-                <h5 class="card-title m-0"> {{item.titulo}} </h5>
-                <small class="text-muted">Tema: {{item.tema.descricao}} </small>
-                <p class="card-text mt-3"> {{item.campo}} </p>
-                <p class="card-text">
-                  <small class="text-muted"> {{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date: 'HH:mm'}}
-                  </small>
-                </p>
-    
-                <p class="card-text">
-                  <small class="text-muted">By: {{item.usuario.nome}} </small>
-                </p>
-              </div>
-            </div>
-          </div> 
-        </div>-->
         <!-- /todas as postagem -->
 
-     <!-- copia -->
         <!-- minhas postagem -->
-
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+          <div class="row d-flex justify_content-center justify-content-between mb-5 pl-3 pr-3">
+            <span class="fs-20">Olá, Bem vinde</span>
+            <div class="d-flex">
+              <i class="fa fa-envelope fs-20 fonte" aria-hidden="true"></i>
+              <i class="fa fa-bell fs-20 ml-5 fonte" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- modal de postagem -->
+              <div class="form-group">
+                <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;"
+                  data-toggle="modal" data-target="#NovaPostagem" href="">Publique algo</a>
+              </div>
+              <!-- /modal de postagem -->
+            </div>
+          </div>
+
           <div class="card mt-3 mb-3 pb-3" *ngFor='let item of user.postagem | orderBy : key : reverse'>
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-                <img class="rounded" style="width: 40px;" src="{{foto}}" alt="Foto de perfil">
+                <img class="rounded div-img-peq" src="{{foto}}" alt="Foto de perfil">
                 <span class="text-center ml-3 fs-20">{{nome}}</span>
               </div>
               <h5 class="card-title">{{item.titulo}}</h5>
@@ -165,7 +186,7 @@
             <div class="align-self-center">
               <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
                 alt="Imagem de capa do card">
-            </div> 
+            </div>
 
             <hr>
 
@@ -176,38 +197,53 @@
 
           </div>
         </div>
+        <!-- /minhas postagem -->
+  
+        <!-- por tema -->
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 
-        <!-- <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-          <div class="card-columns">
-            <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
-              <div class="card-body">
-                <h5 class="card-title m-0"> {{item.titulo}} AAAAAAA </h5>
-                <small class="text-muted">Tema: {{item.tema.descricao}} AAAAAAAAA </small>
-                <p class="card-text mt-3"> {{item.campo}} AAAAAAAA </p>
-                <p class="card-text">
-                  <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date:
-                    'HH:mm'}}</small>
-                </p>
+          <div class="row d-flex justify_content-center justify-content-between align-items-center mb-5 pl-3 pr-3">
+            <span class="fs-20">Olá, Bem vinde</span>
 
-                <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
-                <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="titulo" placeholder="Digite um tema para pesquisar"
+                  [(ngModel)]="descricaoTema" (keyup)='findByDescricaoTema()'>
 
               </div>
             </div>
-          </div>
-        </div> -->
-        <!-- /minhas postagem -->
-        <!-- copia -->
 
-        <!-- copia -->
-        <!-- por tema -->
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            <div class="d-flex">
+              <i class="fa fa-envelope fs-20 fonte" aria-hidden="true"></i>
+              <i class="fa fa-bell fs-20 ml-5 fonte" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- modal de postagem -->
+              <div class="form-group">
+                <a class="btn bg-light cor-roxa btn-publique d-flex justify-content-start" style="border-radius: 10px;"
+                  data-toggle="modal" data-target="#NovaPostagem" href="">Publique algo</a>
+              </div>
+              <!-- /modal de postagem -->
+            </div>
+          </div>
+
           <div *ngFor='let tema of listaTemas'>
             <div class="card mt-3 mb-3 pb-3" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
               <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <img class="rounded" style="width: 40px;" src="{{item.usuario.foto}}" alt="Foto de perfil">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <img class="rounded div-img-peq" src="{{item.usuario.foto}}" alt="Foto de perfil">
                   <span class="text-center ml-3 fs-20">{{item.usuario.nome}}</span>
+                  </div>
+
+                  <div>
+                    <a href="{{whats+item.usuario.telefone}}" target="_blank">
+                      <i class="fa fa-whatsapp fs-20 fonte" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
                 <h5 class="card-title">{{item.titulo}}</h5>
                 <p class="card-text">Tema: {{tema.descricao}}</p>
@@ -221,34 +257,11 @@
               <div class="align-self-center">
                 <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
                   alt="Imagem de capa do card">
-              </div> 
-            </div>
-            </div>
-        </div>
-
-        <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <div class="card-columns" *ngFor='let tema of listaTemas'>
-            <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
-              <div class="card-body">
-                <h5 class="card-title m-0"> {{item.titulo}} </h5>
-                <p class="card-text mt-3"> {{item.campo}} </p>
-                <p class="card-text">
-                  <small class="text-muted">{{item.dataPost | date: 'dd/MM/yyyy'}} às {{item.dataPost | date:
-                    'HH:mm'}}</small>
-                </p>
-
-                <p class="card-text">
-                  <small class="text-muted">By: {{item.usuario.nome}} </small>
-                </p>
-
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <!-- /por tema -->
-        <!-- copia -->
-
-
       </div>
     </div>
   </div>
@@ -316,48 +329,49 @@
 <!-- modal do editar perfil -->
 <div class="modal fade" id="EditarPerfil" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" style="border-radius: 10px;"role="document">
+  <div class="modal-dialog modal-dialog-centered" style="border-radius: 10px;" role="document">
     <div class="modal-content bg-modal">
 
-      
-      
+
+
 
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
         <h5 class="modal-title text-center text-white mb-3" id="TituloModalCentralizado">Editar perfil</h5>
-          
-      
+
+
 
         <div class="form-group">
-          <input [(ngModel)]='user.nome' class="form-control" type="text" style="border-radius: 10px;" name="nome" id="nome" placeholder="Seu nome">
+          <input [(ngModel)]='user.nome' class="form-control" type="text" style="border-radius: 10px;" name="nome"
+            id="nome" placeholder="Seu nome">
         </div>
 
         <div class="form-group">
-          <input [(ngModel)]='user.email' class="form-control" style="border-radius: 10px;" type="email" name="email" id="email"
-            placeholder="Seu Email">
+          <input [(ngModel)]='user.email' class="form-control" style="border-radius: 10px;" type="email" name="email"
+            id="email" placeholder="Seu Email">
         </div>
 
         <div class="form-group">
-          <input [(ngModel)]='user.telefone' class="form-control" style="border-radius: 10px;" type="telefone" name="telefone" id="telefone"
-              placeholder="Ex: 1199995555">
-        </div>
-        
-        <div class="form-group">
-          <input [(ngModel)]='user.foto' class="form-control" style="border-radius: 10px;" type="text" name="foto" id="foto"
-            placeholder="Foto de Perfil">
+          <input [(ngModel)]='user.telefone' class="form-control" style="border-radius: 10px;" type="telefone"
+            name="telefone" id="telefone" placeholder="Ex: 1199995555">
         </div>
 
         <div class="form-group">
-          <input (input)='confirmSenha($event)' class="form-control" style="border-radius: 10px;" type="password" name="senha" id="senha"
-            placeholder="Sua Senha">
+          <input [(ngModel)]='user.foto' class="form-control" style="border-radius: 10px;" type="text" name="foto"
+            id="foto" placeholder="Foto de Perfil">
+        </div>
+
+        <div class="form-group">
+          <input (input)='confirmSenha($event)' class="form-control" style="border-radius: 10px;" type="password"
+            name="senha" id="senha" placeholder="Sua Senha">
         </div>
 
 
         <div class="form-group">
-          <input [(ngModel)]='user.senha' class="form-control" style="border-radius: 10px;" type="password" name="confirmSenha" id="confirmSenha"
-            placeholder="Confirme sua Senha">
+          <input [(ngModel)]='user.senha' class="form-control" style="border-radius: 10px;" type="password"
+            name="confirmSenha" id="confirmSenha" placeholder="Confirme sua Senha">
         </div>
 
         <!-- <div class="form-group">
@@ -368,11 +382,11 @@
           </select>
         </div> -->
         <div class="d-flex justify-content-center">
-        <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
-        <button type="submit" class="btn botao2 text-white ml-3 mt-3" (click)='atualizar()'>Atualizar</button>
+          <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn botao2 text-white ml-3 mt-3" (click)='atualizar()'>Atualizar</button>
+        </div>
       </div>
-      </div>
-      
+
     </div>
   </div>
 </div>

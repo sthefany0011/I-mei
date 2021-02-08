@@ -23,7 +23,7 @@ export class InicioComponent implements OnInit {
 
   confirmarSenha: string
   
-
+  whats: string = 'https://api.whatsapp.com/send?phone=55'
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
   tituloPost: string
@@ -60,6 +60,7 @@ export class InicioComponent implements OnInit {
 
     // this.idUser = this.route.snapshot.params['id']
     this.findByIdUserEdit(this.idUser)
+    console.log(this.user)
   }
 
   getAllTemas() {
