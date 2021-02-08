@@ -52,7 +52,7 @@ public class UsuarioService {
 		user.get().setEmail(usuario.get().getEmail());
 		user.get().setFoto(usuario.get().getFoto());
 		user.get().setTipo(usuario.get().getTipo());
-		user.get().setPessoa(usuario.get().getPessoa());
+		user.get().setTelefone(usuario.get().getTelefone());
 		user.get().setId(usuario.get().getId());
 		
 		

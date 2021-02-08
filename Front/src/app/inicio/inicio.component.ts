@@ -22,7 +22,7 @@ export class InicioComponent implements OnInit {
   id = environment.id
 
   confirmarSenha: string
-  tipoP: string
+  
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
@@ -131,13 +131,9 @@ export class InicioComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  tipoPessoa(event: any){
-    this.tipoP = event.target.value
-  }
-
+ 
   atualizar(){
-    this.user.pessoa = this.tipoP
-    this.user.tipo = 'normal'
+    
 
     if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')

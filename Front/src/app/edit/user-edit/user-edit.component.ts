@@ -15,7 +15,7 @@ export class UserEditComponent implements OnInit {
   user: User = new User()
   idUser: number
   confirmarSenha: string
-  tipoP: string
+  
 
   constructor(
     private authService: AuthService,
@@ -40,14 +40,10 @@ export class UserEditComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  tipoPessoa(event: any){
-    this.tipoP = event.target.value
-  }
+  
 
   atualizar(){
-    this.user.pessoa = this.tipoP
-    this.user.tipo = 'normal'
-
+    
     if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')
     }else{

@@ -8,7 +8,7 @@ public class UserLogin {
 	private String email;
 	private String senha;
 	private String token;
-	private String pessoa;
+	private String telefone;
 	private String foto;
 	private String tipo;
 		
@@ -58,12 +58,13 @@ public class UserLogin {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getPessoa() {
-		return pessoa;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setPessoa(String pessoa) {
-		this.pessoa = pessoa;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
+
 	
 	
 }

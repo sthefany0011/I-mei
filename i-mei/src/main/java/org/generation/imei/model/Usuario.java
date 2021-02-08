@@ -40,7 +40,7 @@ public class Usuario {
 	@NotNull
 	private String foto;
 
-	private String pessoa; // se é pj ou pf
+	private String telefone; 
 	
 	private String tipo; //se é admin ou normal
 	
@@ -109,12 +109,12 @@ public class Usuario {
 		this.foto = foto;
 	}
 
-	public String getPessoa() {
-		return pessoa;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setPessoa(String pessoa) {
-		this.pessoa = pessoa;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	
 
