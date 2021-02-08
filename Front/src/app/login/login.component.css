@@ -64,4 +64,13 @@
         width: 150px;
         height: 150px;
     }
+
+    .btn {
+        border-color: gray !important;
+    }
+
+    .btn-home {
+        color: gray !important;
+        font-weight: bolder;
+    }
 }

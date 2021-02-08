@@ -27,3 +27,59 @@ html{
     height: 40px !important;
     border-radius: 10px;
 }
+
+
+
+@media only screen and (max-width: 420px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+    } 
+
+    /* .container-fluid {
+        height: 100px !important;
+    } */
+
+    .navbar {
+        padding: 0 !important;
+        width: 100vw !important;
+    }
+
+    .menu {
+        height: 100px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn-sair {
+        margin-top: 0;
+        padding-bottom: 10px;
+    }
+
+    .content-post {
+        position: absolute;
+        top: 110px;
+        margin: auto;
+    }
+
+    .align {
+        margin-bottom: 0 !important;
+    }
+
+    .align .two{
+        order: 1;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-publique {
+        height: 50px !important;
+    }
+
+    .btn-sair {
+        margin-top: 50px !important;
+    }
+}

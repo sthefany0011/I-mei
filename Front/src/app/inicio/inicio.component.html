@@ -91,18 +91,18 @@
         <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel"
           aria-labelledby="v-pills-profile-tab">
 
-          <div class="row d-flex justify_content-center justify-content-between mb-5 pl-3 pr-3">
+          <div class="row d-flex align justify_content-center justify-content-between mb-5 pl-3 pr-3">
             <span class="fs-20">Olá, Bem vinde</span>
 
-            <div class="col-md-4">
+            <div class="col-md-4 two">
               <div class="form-group">
                 <input type="text" class="form-control" id="titulo"
-                  placeholder="Digite um titulo de postagem para pesquisar" [(ngModel)]="tituloPost"
-                  (keyup)='findByTituloPostagem()'>
+                  placeholder="Pesquise por título" [(ngModel)]="tituloPost"
+                  (keyup)='findByTituloPostagem()' style="border-radius: 20px; border-color: violet;">
               </div>
             </div>
 
-            <div class="d-flex">
+            <div class="d-flex icons">
               <i class="fa fa-envelope fs-20 fonte" aria-hidden="true"></i>
               <i class="fa fa-bell fs-20 ml-5 fonte" aria-hidden="true"></i>
             </div>
@@ -150,7 +150,7 @@
         <!-- minhas postagem -->
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
-          <div class="row d-flex justify_content-center justify-content-between mb-5 pl-3 pr-3">
+          <div class="row d-flex align justify_content-center justify-content-between mb-5 pl-3 pr-3">
             <span class="fs-20">Olá, Bem vinde</span>
             <div class="d-flex">
               <i class="fa fa-envelope fs-20 fonte" aria-hidden="true"></i>
@@ -202,18 +202,18 @@
         <!-- por tema -->
         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 
-          <div class="row d-flex justify_content-center justify-content-between align-items-center mb-5 pl-3 pr-3">
+          <div class="row d-flex align justify_content-center justify-content-between align-items-center mb-5 pl-3 pr-3">
             <span class="fs-20">Olá, Bem vinde</span>
 
-            <div class="col-md-4">
+            <div class="col-md-4 two">
               <div class="form-group">
-                <input type="text" class="form-control" id="titulo" placeholder="Digite um tema para pesquisar"
-                  [(ngModel)]="descricaoTema" (keyup)='findByDescricaoTema()'>
+                <input type="text" class="form-control" id="titulo" placeholder="Pesquise por tema"
+                  [(ngModel)]="descricaoTema" (keyup)='findByDescricaoTema()' style="border-radius: 20px; border-color: violet;">
 
               </div>
             </div>
 
-            <div class="d-flex">
+            <div class="d-flex icons">
               <i class="fa fa-envelope fs-20 fonte" aria-hidden="true"></i>
               <i class="fa fa-bell fs-20 ml-5 fonte" aria-hidden="true"></i>
             </div>

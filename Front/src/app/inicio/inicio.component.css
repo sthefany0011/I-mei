@@ -118,9 +118,19 @@ color: #72077f;
     font-weight: bolder;
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 420px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+    } 
+
     .container-fluid {
         height: 100px !important;
+    }
+
+    .navbar {
+        padding: 0 !important;
+        width: 100vw !important;
     }
 
     .menu {
@@ -135,6 +145,29 @@ color: #72077f;
     }
 
     .content-post {
+        position: absolute;
+        top: 110px;
         margin: auto;
+    }
+
+    .align {
+        margin-bottom: 0 !important;
+    }
+
+    .align .two{
+        order: 1;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-publique {
+        height: 50px !important;
+    }
+
+    .btn-sair {
+        margin-top: 50px;
     }
 }

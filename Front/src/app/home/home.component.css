@@ -256,5 +256,10 @@
   .navbar li {
     padding-bottom: 10px;
   }
+
+  .img-fluid {
+    width: 70px !important;
+    height: 40px !important;
+  }
 }
   

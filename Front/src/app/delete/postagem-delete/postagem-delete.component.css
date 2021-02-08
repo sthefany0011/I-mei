@@ -50,24 +50,3 @@ a {
     height: 40px !important;
     border-radius: 10px;
 }
-
-@media (max-width: 600px) {
-    .container-fluid {
-        height: 100px !important;
-    }
-
-    .menu {
-        height: 100px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .btn-sair {
-        margin-top: 0;
-        padding-bottom: 10px;
-    }
-
-    .content-post {
-        margin: auto;
-    }
-}
