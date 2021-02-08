@@ -7,59 +7,60 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 forma-login">
             <div class="col-md-11">
                 <div class="form-group">
                     <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome"
                         placeholder="Nome">
                 </div>
-    
+
                 <div class="form-group">
                     <input [(ngModel)]='user.email' class="form-control" type="email" name="email" id="email"
                         placeholder="Email">
                 </div>
-    
+
                 <div class="form-group">
-                    <input [(ngModel)]='user.telefone' class="form-control" type="telefone" name="telefone" id="telefone"
-                        placeholder="Fone, Ex: 1199995555">
+                    <input [(ngModel)]='user.telefone' class="form-control" type="telefone" name="telefone"
+                        id="telefone" placeholder="Fone, Ex: 1199995555">
                 </div>
-    
+
                 <div class="form-group">
                     <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
                         placeholder="link da foto">
                 </div>
-    
+
                 <div class="form-group">
                     <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
                         placeholder="Sua Senha">
                 </div>
-    
-    
+
+
                 <div class="form-group">
                     <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha"
                         id="confirmSenha" placeholder="Confirme sua Senha">
                 </div>
 
                 <div class="form-group">
-                    <input (input)='codAdmin($event)' class="form-control" type="password" name="codAdmin"
-                        id="codAdmin" placeholder="Código administrador">
+                    <input (input)='codAdmin($event)' class="form-control" type="password" name="codAdmin" id="codAdmin"
+                        placeholder="Código administrador">
                 </div>
-    
+
                 <div class="form-group">
                     <!-- <select class="form-control" name="pessoa" id="pessoa" (change)='tipoPessoa($event)'>
                         <option>Selecione tipo de usuário:</option>
                         <option value="pj">Pessoa Jurídica</option>
                         <option value="pf">Pessoa Física</option>
                     </select> -->
-    
+
                     <div class="d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-dourado text-white mr-4" routerLink='/login'>Cancelar</button>
+                        <button type="submit" class="btn btn-dourado text-white mr-4"
+                            routerLink='/login'>Cancelar</button>
                         <button type="submit" class="btn btn-roxo text-white" (click)='cadastrar()'>Cadastrar</button>
                     </div>
-    
+
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>

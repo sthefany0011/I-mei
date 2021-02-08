@@ -42,3 +42,14 @@
 .fonte {
     color: #72077F;
 }
+
+@media only screen and (max-width: 420px) {
+    html {
+        height: 100vh;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+}
