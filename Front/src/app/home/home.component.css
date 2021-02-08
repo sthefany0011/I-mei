@@ -169,14 +169,92 @@
 #dev {
   margin: 0;
   border: 0;
-  height: 550px;
+  height: 100%;
   background: rgba(114, 7, 127, 0.6);
-
- 
+  padding-bottom: 90px;
 }
 
 .produto{
   width: 100px;
   height: 100px;
+}
+
+.media .col {
+  display: none;
+}
+
+@media only screen and (max-width: 420px) {
+  html {
+    width: 100vw;
+  }
+  .parallax {
+    background-image: url("/assets/sobre2.jpg");
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 0px;
+  }
+
+  .titulo {
+    font-size: 28pt;
+    margin: 130px 10px 0 10px;
+  }
+
+  .botao {
+    margin-left: 10px;
+  }
+
+  #sobre img {
+    position: relative;
+    width: 95vw !important;
+    height: 180px;
+  }
+
+  #produtos img{
+    display: none;
+  }
+
+  #produtos .incones{
+    display: none;
+  }
+
+  #produtos p {
+    margin: 0 !important;
+    font-size: 15pt;
+  }
+
+  #produtos h3{
+    font-size: 15pt;
+  }
+
+  #dev {
+    position: relative;
+    height: 100% !important;
+    flex-grow: 1;
+  }
+
+  #dev {
+    position: relative;
+    height: 100vh;
+    flex-grow: 1;
+  }
+
+  .box-content, .box16 {
+    position: relative;
+  }
+
+  .none .col {
+    display: contents;
+  }
+
+  .navbar ul {
+    margin-left: 50px;
+  }
+
+  .navbar li {
+    padding-bottom: 10px;
+  }
 }
   
