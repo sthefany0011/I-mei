@@ -134,10 +134,11 @@ export class InicioComponent implements OnInit {
  
   atualizar(){
     
-    if(typeof this.user.foto == 'undefined') {
+    if(this.user.foto == null || typeof this.user.foto == 'undefined' || this.user.foto == '') {
       this.user.foto = 'https://i.imgur.com/nCE6efQ.png'
+      console.log(this.user.foto+' 2 jão pamonha com foto')
     }
-
+    console.log(this.user.foto+'2 jão sem foto')
     if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')
     }else{
@@ -145,7 +146,9 @@ export class InicioComponent implements OnInit {
         this.user = resp
         this.router.navigate(['/inicio'])
         this.alertas.showAlertSuccess('Usuário atualizado com sucesso, faça login novamente!')
+        console.log(this.user.foto)
         environment.foto = ''
+        console.log(this.user.foto+'2 jão pamonha editado')
         environment.nome = ''
         environment.token = ''
         environment.id = 0
