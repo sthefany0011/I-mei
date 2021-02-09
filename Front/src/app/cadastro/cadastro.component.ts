@@ -47,7 +47,8 @@ export class CadastroComponent implements OnInit {
       return
     } 
     
-    if(this.user.foto == '') {
+    if(typeof this.user.foto == 'undefined') {
+      console.log('Cheguei aqui e coloquei a imagem')
       this.user.foto = 'https://i.imgur.com/nCE6efQ.png'
     }
 

@@ -134,7 +134,7 @@ export class InicioComponent implements OnInit {
  
   atualizar(){
     
-    if(this.user.foto == '') {
+    if(typeof this.user.foto == 'undefined') {
       this.user.foto = 'https://i.imgur.com/nCE6efQ.png'
     }
 
