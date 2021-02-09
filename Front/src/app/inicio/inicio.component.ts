@@ -79,7 +79,6 @@ export class InicioComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
-      // console.log(JSON.stringify(resp))
     })
   }
 
@@ -156,6 +155,12 @@ export class InicioComponent implements OnInit {
     this.authService.getByIdUser(id).subscribe((resp: User)=>{
       this.user = resp
     })
+  }
+  isAdm(){
+    if(this.user.tipo == 'adm'){
+      return true
+    }
+    return false
   }
 
 }

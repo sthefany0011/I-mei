@@ -143,6 +143,9 @@
               <img class="card-img-top img-postagem img-fluid rounded" src="{{item.linkImagem}}"
                 alt="Imagem de capa do card">
             </div>
+            <div class="d-flex align-items-center justify-content-center mt-3" *ngIf='isAdm()'>
+              <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            </div>
           </div>
         </div>
         <!-- /todas as postagem -->
