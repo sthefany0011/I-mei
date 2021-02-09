@@ -31,13 +31,12 @@ public class Usuario {
 	@Email
 	@Size(max = 50)
 	private String email;
-	@NotNull
+	
 	@Size(max = 50)
 	private String nome;
 	@NotBlank
 	private String senha;
 	
-	@NotNull
 	private String foto;
 
 	private String telefone; 

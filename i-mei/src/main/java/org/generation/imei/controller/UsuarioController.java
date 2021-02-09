@@ -75,7 +75,9 @@ public class UsuarioController {
 		Usuario usuar = usuarioService.CadastrarUsuario(usuario); // receber nullo
 		if(usuar == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build(); 
-		}
+		} else if(usuar.getEmail().indexOf('.') == -1){
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build(); 
+		}	
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuar);
 	}
 	

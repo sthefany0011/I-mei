@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
@@ -14,7 +15,6 @@ export class CadastroComponent implements OnInit {
   user: User= new User
   confirmarSenha: string
   cod: string
-  
 
   constructor(
     private authService: AuthService,
@@ -38,11 +38,20 @@ export class CadastroComponent implements OnInit {
       this.cod = 'normal'
     }
   }
-
   
   cadastrar(){
     
     this.user.tipo = this.cod
+
+    if(this.user.nome.length < 1){
+      this.alertas.showAlertDanger('Nenhum nome inserido. Por favor, insira um nome!')
+      return
+    }
+
+    if(this.user.foto == '') {
+      this.alertas.showAlertDanger('Link da imagem está vazio. Por favor, insira um link!')
+      return
+    }
 
     if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')
@@ -51,10 +60,12 @@ export class CadastroComponent implements OnInit {
         this.user = resp
         this.router.navigate(['/login'])
         this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
+      },erro=>{
+        if(erro.status == 400){
+          this.alertas.showAlertDanger('Email em uso ou email incorreto, favor inserir um e-mail válido! Ex: usario@email.com')
+
+        }
       })
     }
-
-
   }
-
 }
