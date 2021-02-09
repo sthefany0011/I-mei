@@ -134,6 +134,9 @@ export class InicioComponent implements OnInit {
  
   atualizar(){
     
+    if(this.user.foto == '') {
+      this.user.foto = 'https://i.imgur.com/nCE6efQ.png'
+    }
 
     if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertDanger('As senhas não conferem, favor verificar se as senhas são iguais')
@@ -154,8 +157,10 @@ export class InicioComponent implements OnInit {
   findByIdUserEdit(id: number){
     this.authService.getByIdUser(id).subscribe((resp: User)=>{
       this.user = resp
+      this.user.senha = resp.senha.substring(0, 0)
     })
   }
+
   isAdm(){
     if(this.user.tipo == 'adm'){
       return true

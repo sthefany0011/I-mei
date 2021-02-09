@@ -40,17 +40,15 @@ export class CadastroComponent implements OnInit {
   }
   
   cadastrar(){
-    
     this.user.tipo = this.cod
 
-    if(this.user.nome.length < 1){
+    if(typeof this.user.nome == 'undefined'){
       this.alertas.showAlertDanger('Nenhum nome inserido. Por favor, insira um nome!')
       return
-    }
-
+    } 
+    
     if(this.user.foto == '') {
-      this.alertas.showAlertDanger('Link da imagem está vazio. Por favor, insira um link!')
-      return
+      this.user.foto = 'https://i.imgur.com/nCE6efQ.png'
     }
 
     if(this.user.senha != this.confirmarSenha){
@@ -63,7 +61,6 @@ export class CadastroComponent implements OnInit {
       },erro=>{
         if(erro.status == 400){
           this.alertas.showAlertDanger('Email em uso ou email incorreto, favor inserir um e-mail válido! Ex: usario@email.com')
-
         }
       })
     }

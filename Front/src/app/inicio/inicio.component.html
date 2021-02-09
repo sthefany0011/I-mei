@@ -312,16 +312,11 @@
           <option *ngFor='let tema of listaTemas' value="{{tema.id}}"> {{tema.descricao}} </option>
         </select>
         <div class="d-flex justify-content-center">
-          <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn botao2 text-white ml-3 mt-3" data-dismiss="modal"
+          <button type="button" class="text-white btn botao2 mt-3" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn botao text-white ml-3 mt-3" data-dismiss="modal"
             (click)='publicar()'>Postar</button>
         </div>
       </div>
-
-
-
-
-
     </div>
   </div>
 </div>
@@ -334,17 +329,11 @@
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" style="border-radius: 10px;" role="document">
     <div class="modal-content bg-modal">
-
-
-
-
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
         <h5 class="modal-title text-center text-white mb-3" id="TituloModalCentralizado">Editar perfil</h5>
-
-
 
         <div class="form-group">
           <input [(ngModel)]='user.nome' class="form-control" type="text" style="border-radius: 10px;" name="nome"
@@ -371,22 +360,14 @@
             name="senha" id="senha" placeholder="Sua Senha">
         </div>
 
-
         <div class="form-group">
           <input [(ngModel)]='user.senha' class="form-control" style="border-radius: 10px;" type="password"
             name="confirmSenha" id="confirmSenha" placeholder="Confirme sua Senha">
         </div>
 
-        <!-- <div class="form-group">
-          <select class="form-control" style="border-radius: 10px;" name="pessoa" id="pessoa" (change)='tipoPessoa($event)'>
-            <option>Selecione um tipo de usuário:</option>
-            <option value="pj">Pessoa Jurídica</option>
-            <option value="pf">Pessoa Física</option>
-          </select>
-        </div> -->
         <div class="d-flex justify-content-center">
-          <button type="button" class="text-white btn botao mt-3" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn botao2 text-white ml-3 mt-3" (click)='atualizar()'>Atualizar</button>
+          <button type="button" class="text-white btn botao2 mt-3" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn botao text-white ml-3 mt-3" (click)='atualizar()'>Atualizar</button>
         </div>
       </div>
 
