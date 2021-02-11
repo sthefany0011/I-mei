@@ -1,5 +1,5 @@
 <h1 style="text-align: center;"><strong>Projeto I-Mei&nbsp;</strong></h1>
-<h3><strong>💻 </strong><strong>Integrantes : <a href="https://github.com/cinthiatengan">Cinthia Tengan</a>, <a href="https://github.com/CorreaArams">Lucas Corr&ecirc;a</a>, <a href="https://github.com/JoaoPauloO">Jo&atilde;o Paulo Oliveira</a>, <a href="https://github.com/sthefany0011">Sthefany Silva</a> e <a href="https://github.com/ruizseh">S&eacute;rgio Ruiz</a>.</strong></h3>
+<h3><strong>💻 </strong><strong>Integrantes : <a href="https://github.com/cinthiatengan" target="_blank">Cinthia Tengan</a>, <a href="https://github.com/CorreaArams" target="_blank">Lucas Corr&ecirc;a</a>, <a href="https://github.com/JoaoPauloO" target="_blank">Jo&atilde;o Paulo Oliveira</a>, <a href="https://github.com/sthefany0011" target="_blank">Sthefany Silva</a> e <a href="https://github.com/ruizseh" target="_blank">S&eacute;rgio Ruiz</a>.</strong></h3>
 <p>&nbsp;</p>
 <h3><strong>&nbsp;</strong></h3>
 <h3><strong>🎯 </strong><strong>Escopo do Projeto</strong></h3>
@@ -12,5 +12,5 @@
   
   Link da nossa aplicação:
   
-  <a href="https://i-mei.herokuapp.com/#/home">https://i-mei.herokuapp.com/#/home</a>
+  <a href="https://i-mei.herokuapp.com/#/home" target="_blank">https://i-mei.herokuapp.com/#/home</a>
   
